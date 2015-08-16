@@ -1,0 +1,17 @@
+com\slicendice\medicare\model\Esr_CtrtModel.class
+com\slicendice\medicare\model\Wo_Act_DetailsModel.class
+com\slicendice\medicare\model\Esr_Sr_SrDetailsModel.class
+com\slicendice\medicare\model\EquipAdminModel.class
+com\slicendice\medicare\model\Esr_SrTechDetailsModel.class
+com\slicendice\medicare\controller\BaseListPageController.class
+com\slicendice\medicare\model\ESR_SR_Schd_MtModel.class
+com\slicendice\medicare\model\SupplierAdminModel.class
+com\slicendice\medicare\model\OrgAdminModel.class
+com\slicendice\medicare\model\Esr_WarantyModel.class
+com\slicendice\medicare\model\Equip_Records.class
+com\slicendice\medicare\model\Esr_GpIssueModel.class
+com\slicendice\medicare\controller\WelcomePageController.class
+com\slicendice\medicare\model\VendorAdminModel.class
+com\slicendice\medicare\model\UserAdminModel.class
+com\slicendice\medicare\model\Wo_OrderDetailsModel.class
+com\slicendice\medicare\model\Wo_Ctc_DetailsModel.class
