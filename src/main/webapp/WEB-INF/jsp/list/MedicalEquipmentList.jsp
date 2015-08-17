@@ -87,37 +87,25 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${books}" var="book" varStatus="booksIndex">
+						<c:forEach items="${records}" var="record" varStatus="recordIndex">
 							<tr>
 								<td id="book_id${booksIndex.index}"><c:out
-										value="${book.book_id}" /></td>
+										value="${record.SERIAL_NO}" /></td>
 								<td id="title${booksIndex.index}"><c:out
-										value="${book.bookTitle}" /></td>
-								<td><c:out value="${book.authorName}" /></td>
+										value="${record.INT_AST_NO}" /></td>
+								<td><c:out value="${record.EQP_NAME}" /></td>
 								<td id="branch_id${booksIndex.index}"><c:out
-										value="${book.branch_id}" /></td>
+										value="${record.MODEL_NO}" /></td>
 								<td id="branchName${booksIndex.index}"><c:out
-										value="${book.branchName}" /></td>
-								<td><c:out value="${book.noOfCopies}" /></td>
-								<td><c:out value="${book.noOfAvailableCopies}" /></td>
-								<c:choose>
-									<c:when test="${book.noOfAvailableCopies <= 0}">
-										<td><button type="button" class="btn btn-danger btn-xs"
-												onclick="alertme()">
-												<span class="glyphicon glyphicon-ban-circle"
-													aria-hidden="true"></span>
-											</button></td>
-									</c:when>
-									<c:otherwise>
-										<td><button id="checkbutton" type="button"
-												class="btn btn-success btn-xs" data-toggle="modal"
-												data-target="#checkout" value="${booksIndex.index}"
-												onclick="alertme(${booksIndex.index})">
-												<span class="glyphicon glyphicon-shopping-cart"
-													aria-hidden="true"></span>
-											</button></td>
-									</c:otherwise>
-								</c:choose>
+										value="${record.VEN_NAME}" /></td>
+								<td><c:out value="${record.SUPPLIER_NAME}" /></td>
+								<td><c:out value="${record.ROOM_NO}" /></td>
+								<td><c:out value="${record.ACTUAL_LOC}" /></td>
+								<td><c:out value="${record.INDENT_NO}" /></td>
+								<td><c:out value="${record.INVOICE_NO}" /></td>
+								<td><c:out value="${record.INVOICE_DATE}" /></td>
+								<td><c:out value="${record.LPO_NO}" /></td>
+								<td><c:out value="${record.MANUF_NAME}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>
