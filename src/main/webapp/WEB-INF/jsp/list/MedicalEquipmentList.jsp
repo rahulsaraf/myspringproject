@@ -21,6 +21,12 @@
 		$('#navigationBar').load('header.html');
 	});
 	
+	function submitForm(serialNo){
+		$("#serialinputid").val(serialNo);
+		document.equipmentDetail.submit(); 
+		return false;
+	}
+	
 </script>
 </head>
 <body class="container">
@@ -29,6 +35,7 @@
 	</div>
 	<div class="container row">
 			<div class="well bs-component">
+			<div>
 				<form class="form-horizontal" name="searchequipments" action="searchequipments"
 					method="POST">
 					<fieldset>
@@ -66,7 +73,12 @@
 						</div>
 					</fieldset>
 				</form>
+				</div>
 				<div class="table-responsive">
+				<form class="form-horizontal" name="equipmentDetail" action="equipmentDetail"
+					method="GET">
+					<fieldset>
+					<input id="serialinputid" type="hidden" name="serialNo" value="123">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -83,14 +95,15 @@
 							<th>Invoice Date</th>
 							<th>LPO Number</th>
 							<th>Manufacturer Name</th>
-							
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${records}" var="record" varStatus="recordIndex">
 							<tr>
-								<td id="book_id${booksIndex.index}"><c:out
-										value="${record.SERIAL_NO}" /></td>
+								<td id="book_id${recordIndex.index}">
+								<a href="equipmentDetail?serialNo=${record.SERIAL_NO}" onclick="submitForm(${record.SERIAL_NO})" style="display:block;"><c:out
+										value="${record.SERIAL_NO}" /></a>
+								</td>
 								<td id="title${booksIndex.index}"><c:out
 										value="${record.INT_AST_NO}" /></td>
 								<td><c:out value="${record.EQP_NAME}" /></td>
@@ -110,6 +123,8 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				</fieldset>
+					</form>
 				</div>
 			</div>
 		</div>

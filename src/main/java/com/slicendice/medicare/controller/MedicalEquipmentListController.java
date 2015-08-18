@@ -30,11 +30,18 @@ public class MedicalEquipmentListController {
 			   @RequestParam("assetNo") String assetNo,
 			   ModelMap model) {
 		List<Equip_Records> records = medicalEquipmentService.getMedicalEquipmentList(serialNo, assetNo);
-		
 		  model.addAttribute("records",records);
 		  model.addAttribute("assetNo",assetNo);
 		  model.addAttribute("serialNo",serialNo);
 	      return "/list/MedicalEquipmentList";
 	   }
+	
+	@RequestMapping(value="/equipmentDetail", method=RequestMethod.GET)
+	public String redirectDetailPage(@RequestParam("serialNo") String serialNo, ModelMap model){
+		List<Equip_Records> records = medicalEquipmentService.getMedicalEquipmentList(serialNo, null);
+		model.addAttribute("record", records.get(0));
+		
+		return "medequip";
+	}
 	
 }

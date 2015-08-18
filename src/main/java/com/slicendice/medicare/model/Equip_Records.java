@@ -30,8 +30,8 @@ private String ACTUAL_LOC;
 private String SUPPLIER_NAME;
 private String SUP_ADD_L1;
 private String SUP_ADD_L2;
-private String Sp_Ct_Fname;
-private String Sp_Ct_Lname;
+private String SP_CT_FNAME;
+private String SP_CT_LNAME;
 private int SUP_CT_PHONE;
 private int ALT_PHONE;
 private String EMAIL_ID;
@@ -83,8 +83,8 @@ public Equip_Records(String cATEGORY, String sUB_CTGRY, String sERIAL_NO,
 	SUPPLIER_NAME = sUPPLIER_NAME;
 	SUP_ADD_L1 = sUP_ADD_L1;
 	SUP_ADD_L2 = sUP_ADD_L2;
-	Sp_Ct_Fname = sp_Ct_Fname;
-	Sp_Ct_Lname = sp_Ct_Lname;
+	SP_CT_FNAME = sp_Ct_Fname;
+	SP_CT_LNAME = sp_Ct_Lname;
 	SUP_CT_PHONE = sUP_CT_PHONE;
 	ALT_PHONE = aLT_PHONE;
 	EMAIL_ID = eMAIL_ID;
@@ -303,19 +303,19 @@ public void setSUP_ADD_L2(String sUP_ADD_L2) {
 }
 
 public String getSp_Ct_Fname() {
-	return Sp_Ct_Fname;
+	return SP_CT_FNAME;
 }
 
 public void setSp_Ct_Fname(String sp_Ct_Fname) {
-	Sp_Ct_Fname = sp_Ct_Fname;
+	SP_CT_FNAME = sp_Ct_Fname;
 }
 
 public String getSp_Ct_Lname() {
-	return Sp_Ct_Lname;
+	return SP_CT_LNAME;
 }
 
 public void setSp_Ct_Lname(String sp_Ct_Lname) {
-	Sp_Ct_Lname = sp_Ct_Lname;
+	SP_CT_LNAME = sp_Ct_Lname;
 }
 
 public int getSUP_CT_PHONE() {

@@ -37,11 +37,6 @@ public class MedicalEquipmentDao {
 			params.add(assetNo);
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new MedicalEquipmentMapper());
-		
 		return records;
 	}
-	
-	
-	
-	
 }
