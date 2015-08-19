@@ -8,7 +8,7 @@ private String SERIAL_NO;
 private String EQP_NAME;
 private String EQP_DESC;
 private String DESC_WORK;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Wo_OrderDetailsModel()
@@ -17,7 +17,7 @@ public Wo_OrderDetailsModel()
 }
 
 public Wo_OrderDetailsModel(String iNT_ASST_NO, String sERIAL_NO,
-		String eQP_NAME, String eQP_DESC, String dESC_WORK, int isActive,
+		String eQP_NAME, String eQP_DESC, String dESC_WORK, short isActive,
 		Date created_Date) {
 	super();
 	INT_ASST_NO = iNT_ASST_NO;
@@ -69,11 +69,11 @@ public void setDESC_WORK(String dESC_WORK) {
 	DESC_WORK = dESC_WORK;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

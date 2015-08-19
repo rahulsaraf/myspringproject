@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package com.slicendice.medicare.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.slicendice.medicare.model.VendorAdminModel;
+import com.slicendice.medicare.service.VendorAdminService;
+
+/**
+ * @author Rahul
+ *
+ */
+@Controller
+public class VendorAdminListController {
+
+	
+	@Autowired
+	VendorAdminService vendorAdminService;
+	
+	@RequestMapping(value="/searchvendoradmin", method=RequestMethod.POST)
+	   public String redirectMedicalEquipListPage(@RequestParam("vendorName") String vendorName,
+			   ModelMap model) {
+		List<VendorAdminModel> records = vendorAdminService.getVendorAdminList(vendorName);
+		  model.addAttribute("records",records);
+		  model.addAttribute("supplierName",vendorName);
+	      return "/list/SupplierAdminList";
+	   }
+	
+	@RequestMapping(value="/supplierAdminDetail", method=RequestMethod.GET)
+	public String redirectEquipAdminDetailPage(@RequestParam("vendorid") String vendorid, ModelMap model){
+		List<VendorAdminModel> records = vendorAdminService.getSupplierAdminDetailList(vendorid);
+		model.addAttribute("record", records.get(0));
+		return "SupplierAdmin";
+	}
+
+}

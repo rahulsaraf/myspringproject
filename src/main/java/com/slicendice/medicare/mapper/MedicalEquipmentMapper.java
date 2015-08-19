@@ -1,13 +1,9 @@
-/**
- * 
- */
+
 package com.slicendice.medicare.mapper;
 
 import com.slicendice.medicare.model.Equip_Records;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.springframework.jdbc.core.RowMapper;
 
 
@@ -69,7 +65,7 @@ public class MedicalEquipmentMapper implements RowMapper<Equip_Records>{
 		records.setEMAIL_ID(rs.getString("EMAIL_ID"));
 		records.setSP_INV_LIST(rs.getString("SP_INV_LIST"));
 		records.setSP_MFC_EQP(rs.getString("SP_MFC_EQP"));
-		records.setIsActive(rs.getInt("IsActive"));
+		records.setIsActive(rs.getShort("IsActive"));
 		records.setCreated_Date(rs.getDate("Created_Date"));
 		return records;
 	}

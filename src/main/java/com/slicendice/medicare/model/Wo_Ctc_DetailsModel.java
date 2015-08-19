@@ -13,7 +13,7 @@ private String CITY;
 private int PHONE;
 private int A_PHONE;
 private String EMAIL;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Wo_Ctc_DetailsModel()
@@ -23,7 +23,7 @@ public Wo_Ctc_DetailsModel()
 
 public Wo_Ctc_DetailsModel(Date oRDER_DATE, Date rEQT_DATE, String vENDOR_NAME,
 		String vEN_ADDR_LINE1, String vEN_ADDR_LINE2, String sUBURB,
-		String cITY, int pHONE, int a_PHONE, String eMAIL, int isActive,
+		String cITY, int pHONE, int a_PHONE, String eMAIL, short isActive,
 		Date created_Date) {
 	super();
 	ORDER_DATE = oRDER_DATE;
@@ -120,11 +120,11 @@ public void setEMAIL(String eMAIL) {
 	EMAIL = eMAIL;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

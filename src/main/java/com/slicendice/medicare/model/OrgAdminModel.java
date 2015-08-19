@@ -10,7 +10,7 @@ public class OrgAdminModel {
 	private String Dept_Code;
 	private String Section;
 	private String Section_Code;
-	private int IsActive;
+	private short IsActive;
 	private Date Created_Date;
 	
 	public OrgAdminModel()
@@ -20,7 +20,7 @@ public class OrgAdminModel {
 
 	public OrgAdminModel(String org_Name, String org_Code, String department,
 			String dept_Code, String section, String section_Code,
-			int isActive, Date created_Date) {
+			short isActive, Date created_Date) {
 		super();
 		Org_Name = org_Name;
 		Org_Code = org_Code;
@@ -80,11 +80,11 @@ public class OrgAdminModel {
 		Section_Code = section_Code;
 	}
 
-	public int getIsActive() {
+	public short getIsActive() {
 		return IsActive;
 	}
 
-	public void setIsActive(int isActive) {
+	public void setIsActive(short isActive) {
 		IsActive = isActive;
 	}
 

@@ -64,22 +64,20 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Name :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equipname2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="equipname" name="equipname">
+									<input type="text" 
+										class="form-control" value="${record.eqp_Name}"  id="equipname" name="equipname" >
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Delivery Date :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="deliverydate2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="deliverydate" name="deliverydate">
+									<input type="text" 
+										class="form-control" value="${record.eqp_Del_Date}"  id="deliverydate" name="deliverydate">
 								</div>
 							</div>
 							
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Equipment Description :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="equipdescription2"
+									<input type="text" class="form-control" value="${record.eqp_Desc}"  id="equipdescription2"
 										disabled="disabled" name = "equipdescription">
 								</div>
 							</div>
@@ -87,99 +85,81 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Manufacturer Name :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="manufacturer2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="manufacturer" name="manufacturer">
+									<input type="text" 
+										class="form-control" value="${record.manf_Name}"  id="manufacturer" name="manufacturer">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Vendor Name :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="vendorname1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="vendorname" name="vendorname">
+									<input type="text" 
+										class="form-control" value="${record.vendor_Name}"  id="vendorname" name="vendorname">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Model Number :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="modelnumber2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="modelnumber" name="modelnumber">
+									<input type="text" 
+										class="form-control" value="${record.model_No}"  id="modelnumber" name="modelnumber">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Supplier Name :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="suppliername1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="suppliername" name="suppliername">
+									<input type="text" 
+										class="form-control" value="${record.supplier_Name}"  id="suppliername" name="suppliername">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Serial Number :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="serialnumber2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="serialNo" name="serialNo">
+									<input type="text" class="form-control" value="${record.serial_No}"  id="serialNo" name="serialNo">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Internal Asset Number :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="assetnumber2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="assetno" name="assetno">
+									<input type="text" class="form-control" value="${record.int_Asset_no}"   id="assetno" name="assetno">
 								</div>
 							</div>
 								<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Type :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equiptype2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="equiptype" name="equiptype">
+									<input type="text" 
+										class="form-control" value="${record.equip_Type}"  id="equiptype" name="equiptype">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Invoice Number :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="invoicenumber2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="invoicenumber" name="invoicenumber">
+									<input type="text" 
+										class="form-control" value="${record.invoice_No}"  id="invoicenumber" name="invoicenumber">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Class :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equipclass2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="equipclass" name="equipclass">
+									<input type="text" 
+										class="form-control" value="${record.equip_Class}"  id="equipclass" name="equipclass">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Invoice Date :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="invoicedate2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="invoicedate" name="invoicedate">
+									<input type="text" class="form-control" value="${record.invoice_Date}"   id="invoicedate" name="invoicedate">
 								</div>
 							</div>
 								<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Category :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="category2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="category" name="category">
+									<input type="text" class="form-control" value="${record.category}"   id="category" name="category">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Warrenty Type :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="warrentytype2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="warrentytype" name="warrentytype">
+									<input type="text" 
+										class="form-control" value="${record.wrty_Type}"  id="warrentytype" name="warrentytype">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Sub Category :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="subcategory2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="subcategory" name="subcategory">
+									<input type="text" 
+										class="form-control" value="${record.sub_Ctgry}"  id="subcategory" name="subcategory">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Warranty End Date :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="warrantyenddate2"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="warrantyenddate" name="warrantyenddate">
+									<input type="text" 
+										class="form-control" value="${record.wrty_End_Date}"  id="warrantyenddate" name="warrantyenddate">
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -209,57 +189,49 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Safety Test Complete :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="safetytest1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="safetytest" name="safetytest">
+									<input type="text"
+										class="form-control" value="${record.ST_Comp}"  id="safetytest" name="safetytest">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Caliberation Certificate :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="caliberationcertificate1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="caliberationcertificate" name="caliberationcertificate">
+									<input type="text" 
+										class="form-control" value="${record.calib_Certi}"  id="caliberationcertificate" name="caliberationcertificate">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Documents Received :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="docreceived1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="docreceived" name="docreceived">
+									<input type="text" 
+										class="form-control" value="${record.doc_rcvd}"  id="docreceived" name="docreceived">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Accessories :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="accessories1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="accessories" name="accessories">
+									<input type="text" 
+										class="form-control" value="${record.accessories}"  id="accessories" name="accessories">
 								</div>
 							</div>
 								<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Manuals :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equipmanual1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="equipmanual" name="equipmanual">
+									<input type="text" 
+										class="form-control" value="${record.equip_Manuals}"  id="equipmanual" name="equipmanual">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Training Done :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="trainingdone1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="trainingdone" name="trainingdone">
+									<input type="text" 
+										class="form-control" value="${record.trng_Done}"  id="trainingdone" name="trainingdone">
 								</div>
 							</div>
 								<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Service Manuals :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="servicemanual1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="servicemanual" name="servicemanual">
+									<input type="text" 
+										class="form-control" value="${record.service_Manuals}"  id="servicemanual" name="servicemanual">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Dept Trained :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="depttrained1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="depttrained" name="depttrained">
+									<input type="text" 
+										class="form-control" value="${record.dept_Trnd}"  id="depttrained" name="depttrained">
 								</div>
 							</div>
 							
@@ -268,23 +240,21 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Other Test Equip Needed :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="othertest1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="othertest" name="othertest">
+									<input type="text" 
+										class="form-control" value="${record.OTE_Needed}"  id="othertest" name="othertest">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Spares List :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="sparelist1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="sparelist" name="sparelist">
+									<input type="text" 
+										class="form-control" value="${record.spares_List}"  id="sparelist" name="sparelist">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Additional Remarks :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="remarks"
+									<input type="text" class="form-control" value="${record.add_Re}"  id="remarks"
 										disabled="disabled">
 								</div>
 							</div>

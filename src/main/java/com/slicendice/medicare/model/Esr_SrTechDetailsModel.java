@@ -14,13 +14,13 @@ private String ZIP;
 private int PHONE;
 private int A_PHONE;
 private String EMAIL;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Esr_SrTechDetailsModel(String eNGR_NAME, String cOMPANY_NAME,
 		String mNGR_NAME, String aDDRS_LINE1, String aDDRS_LINE2,
 		String sUBURB, String cITY, String zIP, int pHONE, int a_PHONE,
-		String eMAIL, int isActive, Date created_Date) {
+		String eMAIL, short isActive, Date created_Date) {
 	super();
 	ENGR_NAME = eNGR_NAME;
 	COMPANY_NAME = cOMPANY_NAME;
@@ -125,11 +125,11 @@ public void setEMAIL(String eMAIL) {
 	EMAIL = eMAIL;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

@@ -19,4 +19,19 @@ public class BaseListPageController {
 	   public String redirectMedicalEquipListPage(ModelMap model) {
 	      return "/list/MedicalEquipmentList";
 	   }
+	   
+	   @RequestMapping(value="/equipAdminListPage", method=RequestMethod.GET)
+	   public String redirectEquipAdminListPage(ModelMap model) {
+	      return "/list/EquipmentAdminList";
+	   }
+	   
+	   @RequestMapping(value="/supplierAdminListPage", method=RequestMethod.GET)
+	   public String redirectSupplierAdminListPage(ModelMap model) {
+	      return "/list/SupplierAdminList";
+	   }
+	   
+	   @RequestMapping(value="/vendorAdminListPage", method=RequestMethod.GET)
+	   public String redirectVendorAdminListPage(ModelMap model) {
+	      return "/list/VendorAdminList";
+	   }
 }

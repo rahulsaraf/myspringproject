@@ -17,7 +17,7 @@ private Date ORIG_INST_DATE;
 private String AMC_INV_NUM;
 private long AMC_INV_AMOUNT;
 private Date PRE_MAIN_SCHD;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Esr_CtrtModel()
@@ -29,7 +29,7 @@ public Esr_CtrtModel(String iNT_ASS_NUM, int s_NUM, String eQP_NAME,
 		String eQP_DESC, String mNF_NAME, String vENDOR_NAME,
 		String aMC_V_NAME, Date aMC_S_DATE, Date aMC_E_DATE,
 		Date oRIG_INST_DATE, String aMC_INV_NUM, long aMC_INV_AMOUNT,
-		Date pRE_MAIN_SCHD, int isActive, Date created_Date) {
+		Date pRE_MAIN_SCHD, short isActive, Date created_Date) {
 	super();
 	INT_ASS_NUM = iNT_ASS_NUM;
 	S_NUM = s_NUM;
@@ -152,11 +152,11 @@ public void setPRE_MAIN_SCHD(Date pRE_MAIN_SCHD) {
 	PRE_MAIN_SCHD = pRE_MAIN_SCHD;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

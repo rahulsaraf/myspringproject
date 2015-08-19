@@ -10,7 +10,7 @@ private Date TIME_OUT;
 private Date Date;
 private String EQP_DESC;
 private String Approver_NAME;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Esr_GpIssueModel()
@@ -20,7 +20,7 @@ public Esr_GpIssueModel()
 
 public Esr_GpIssueModel(String eNG_NAME, String cOMP_NAME,
 		java.util.Date tIME_IN, java.util.Date tIME_OUT, java.util.Date date,
-		String eQP_DESC, String approver_NAME, int isActive,
+		String eQP_DESC, String approver_NAME, short isActive,
 		java.util.Date created_Date) {
 	super();
 	ENG_NAME = eNG_NAME;
@@ -90,11 +90,11 @@ public void setApprover_NAME(String approver_NAME) {
 	Approver_NAME = approver_NAME;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

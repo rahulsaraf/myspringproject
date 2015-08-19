@@ -14,12 +14,12 @@ private String Ven_Ct_Name;
 private String Ven_Ct_Phone;
 private String Alt_Phone;
 private String Email_ID;
-private int Is_Ven_Supp;
-private int Is_Ven_Manuf;
-private int Is_Ven_Preffd;
-private int DVS_Spares;
+private short Is_Ven_Supp;
+private short Is_Ven_Manuf;
+private short Is_Ven_Preffd;
+private short DVS_Spares;
 private String Add_Re;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public VendorAdminModel()
@@ -30,9 +30,9 @@ public VendorAdminModel()
 public VendorAdminModel(String vendor_Name, String vendor_Desc,
 		String ven_Addr_l1, String ven_Addr_l2, String ven_Addr_l3,
 		String ven_Country, String ven_Ct_Name, String ven_Ct_Phone,
-		String alt_Phone, String email_ID, int is_Ven_Supp, int is_Ven_Manuf,
-		int is_Ven_Preffd, int dVS_Spares, String add_Re, int isActive,
-		Date created_Date) {
+		String alt_Phone, String email_ID, short is_Ven_Supp,
+		short is_Ven_Manuf, short is_Ven_Preffd, short dVS_Spares,
+		String add_Re, short isActive, Date created_Date) {
 	super();
 	Vendor_Name = vendor_Name;
 	Vendor_Desc = vendor_Desc;
@@ -133,35 +133,35 @@ public void setEmail_ID(String email_ID) {
 	Email_ID = email_ID;
 }
 
-public int getIs_Ven_Supp() {
+public short getIs_Ven_Supp() {
 	return Is_Ven_Supp;
 }
 
-public void setIs_Ven_Supp(int is_Ven_Supp) {
+public void setIs_Ven_Supp(short is_Ven_Supp) {
 	Is_Ven_Supp = is_Ven_Supp;
 }
 
-public int getIs_Ven_Manuf() {
+public short getIs_Ven_Manuf() {
 	return Is_Ven_Manuf;
 }
 
-public void setIs_Ven_Manuf(int is_Ven_Manuf) {
+public void setIs_Ven_Manuf(short is_Ven_Manuf) {
 	Is_Ven_Manuf = is_Ven_Manuf;
 }
 
-public int getIs_Ven_Preffd() {
+public short getIs_Ven_Preffd() {
 	return Is_Ven_Preffd;
 }
 
-public void setIs_Ven_Preffd(int is_Ven_Preffd) {
+public void setIs_Ven_Preffd(short is_Ven_Preffd) {
 	Is_Ven_Preffd = is_Ven_Preffd;
 }
 
-public int getDVS_Spares() {
+public short getDVS_Spares() {
 	return DVS_Spares;
 }
 
-public void setDVS_Spares(int dVS_Spares) {
+public void setDVS_Spares(short dVS_Spares) {
 	DVS_Spares = dVS_Spares;
 }
 
@@ -173,11 +173,11 @@ public void setAdd_Re(String add_Re) {
 	Add_Re = add_Re;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 
@@ -188,6 +188,5 @@ public Date getCreated_Date() {
 public void setCreated_Date(Date created_Date) {
 	Created_Date = created_Date;
 }
-
 
 }

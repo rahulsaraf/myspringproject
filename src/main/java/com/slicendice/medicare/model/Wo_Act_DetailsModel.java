@@ -16,7 +16,7 @@ private long HR_RATE;
 private long TOTAL_ITEM_COST;
 private long TOTAL_LB_COST;
 private long TOTAL_COST;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Wo_Act_DetailsModel()
@@ -28,7 +28,7 @@ public Wo_Act_DetailsModel(String dEPT, String dEPT_CONTACT,
 		String iNT_ASS_NUM, String sR_NUMBER, String eQUP_NAME,
 		String eQUP_DESC, long iTEM_COST, int iTEM_QTY, float hR_WORKED,
 		long hR_RATE, long tOTAL_ITEM_COST, long tOTAL_LB_COST,
-		long tOTAL_COST, int isActive, Date created_Date) {
+		long tOTAL_COST, short isActive, Date created_Date) {
 	super();
 	DEPT = dEPT;
 	DEPT_CONTACT = dEPT_CONTACT;
@@ -151,11 +151,11 @@ public void setTOTAL_COST(long tOTAL_COST) {
 	TOTAL_COST = tOTAL_COST;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

@@ -16,7 +16,7 @@ private String INV_NUM;
 private Date INV_DATE;
 private Date DELY_DATE;
 private Date INSTA_DATE;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Esr_WarantyModel()
@@ -27,7 +27,7 @@ public Esr_WarantyModel()
 public Esr_WarantyModel(String iNT_ASS_NUM, int s_NUM, String eQP_NAME,
 		String eQP_DESC, String mNF_NAME, String vENDOR_NAME, Date wAR_S_DATE,
 		Date wAR_E_DATE, String wAR_TYPE, String iNV_NUM, Date iNV_DATE,
-		Date dELY_DATE, Date iNSTA_DATE, int isActive, Date created_Date) {
+		Date dELY_DATE, Date iNSTA_DATE, short isActive, Date created_Date) {
 	super();
 	INT_ASS_NUM = iNT_ASS_NUM;
 	S_NUM = s_NUM;
@@ -150,11 +150,11 @@ public void setINSTA_DATE(Date iNSTA_DATE) {
 	INSTA_DATE = iNSTA_DATE;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

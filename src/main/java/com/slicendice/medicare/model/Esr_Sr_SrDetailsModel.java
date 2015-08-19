@@ -11,7 +11,7 @@ private String DEFECT_CODE;
 private String DEFECT_DESC;
 private String ITEM_CODE;
 private String ITEM_DESC;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Esr_Sr_SrDetailsModel()
@@ -21,7 +21,7 @@ public Esr_Sr_SrDetailsModel()
 
 public Esr_Sr_SrDetailsModel(String sERV_TYPE, String sERV_DESC,
 		int cOMPREHENSIVE_FLAG, int pREVENTIVE_FLAG, String dEFECT_CODE,
-		String dEFECT_DESC, String iTEM_CODE, String iTEM_DESC, int isActive,
+		String dEFECT_DESC, String iTEM_CODE, String iTEM_DESC, short isActive,
 		Date created_Date) {
 	super();
 	SERV_TYPE = sERV_TYPE;
@@ -100,11 +100,11 @@ public void setITEM_DESC(String iTEM_DESC) {
 	ITEM_DESC = iTEM_DESC;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

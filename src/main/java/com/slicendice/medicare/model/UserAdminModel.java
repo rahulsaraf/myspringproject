@@ -19,7 +19,7 @@ public class UserAdminModel {
 	private String Manager_Name;
 	private String Manager_Id;
 	private String User_Access;
-	private int IsActive;
+	private short IsActive;
 	private Date Created_Date;
 	
 	public UserAdminModel()
@@ -32,7 +32,7 @@ public class UserAdminModel {
 			String emp_ID, String usr_Ct_Phone, String alt_phone,
 			String email_ID, String login_ID, String password,
 			String confirm_Password, String manager_Name, String manager_Id,
-			String user_Access, int isActive, Date created_Date) {
+			String user_Access, short isActive, Date created_Date) {
 		super();
 		Usr_Name = usr_Name;
 		Organisation = organisation;
@@ -182,11 +182,11 @@ public class UserAdminModel {
 		User_Access = user_Access;
 	}
 
-	public int getIsActive() {
+	public short getIsActive() {
 		return IsActive;
 	}
 
-	public void setIsActive(int isActive) {
+	public void setIsActive(short isActive) {
 		IsActive = isActive;
 	}
 

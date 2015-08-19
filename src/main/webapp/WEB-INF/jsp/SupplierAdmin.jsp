@@ -73,7 +73,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Supplier Name :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suppname"
-										disabled="disabled" name = "suppname">
+										disabled="disabled" name = "suppname" value="${record.sp_Name}">
 								</div>
 							</div>
 							
@@ -81,7 +81,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Supplier Address Line 1 :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suppaddressline1"
-										disabled="disabled" name = "suppaddressline1">
+										disabled="disabled" name = "suppaddressline1" value="${record.sp_Addr_L1}">
 								</div>
 							</div>
 							
@@ -89,7 +89,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Supplier Address Line 2 :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suppaddressline2"
-										disabled="disabled" name = "suppaddressline2">
+										disabled="disabled" name = "suppaddressline2" value="${record.sp_Addr_L2}">
 								</div>
 							</div>
 							
@@ -97,7 +97,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Suburb :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suburb"
-										disabled="disabled" name = "suburb">
+										disabled="disabled" name = "suburb" value="${record.suburb}">
 								</div>
 							</div>
 							
@@ -105,7 +105,7 @@
 								<label for="bookId" class="col-lg-3 text-left">City :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="city"
-										disabled="disabled" name = "city">
+										disabled="disabled" name = "city" value="${record.sp_City}">
 								</div>
 							</div>
 							
@@ -113,21 +113,21 @@
 								<label for="bookId" class="col-lg-3 text-left">Pin/Zip :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="pinzip"
-										disabled="disabled" name = "pinzip">
+										disabled="disabled" name = "pinzip" value="${record.sp_Zip}">
 								</div>
 							</div>
 								<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Supplier Country :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suppliercountry"
-										disabled="disabled" name = "suppliercountry">
+										disabled="disabled" name = "suppliercountry" value="${record.sp_Country}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Supplier Contact Name :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suppcontactname"
-										disabled="disabled" name = "suppcontactname">
+										disabled="disabled" name = "suppcontactname" value="${record.sp_Ct_Fname}">
 								</div>
 							</div>
 							
@@ -135,21 +135,21 @@
 								<label for="bookId" class="col-lg-3 text-left">Supplier Contact Phone :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="suppcontactphone"
-										disabled="disabled" name = "suppcontactphone">
+										disabled="disabled" name = "suppcontactphone" value="${record.sp_Ct_Phone}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Alternate Phone :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="alternatephone"
-										disabled="disabled" name = "alternatephone">
+										disabled="disabled" name = "alternatephone" value="${record.alt_phone}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Email Address :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="emailaddress"
-										disabled="disabled" name = "emailaddress">
+										disabled="disabled" name = "emailaddress" value="${record.email_ID}">
 								</div>
 							</div>
 

@@ -30,14 +30,14 @@ private String ACTUAL_LOC;
 private String SUPPLIER_NAME;
 private String SUP_ADD_L1;
 private String SUP_ADD_L2;
-private String SP_CT_FNAME;
-private String SP_CT_LNAME;
+private String Sp_Ct_Fname;
+private String Sp_Ct_Lname;
 private int SUP_CT_PHONE;
 private int ALT_PHONE;
 private String EMAIL_ID;
 private String SP_INV_LIST;
 private String SP_MFC_EQP;
-private int IsActive;
+private short IsActive;
 private Date Created_Date;
 
 public Equip_Records()
@@ -55,7 +55,7 @@ public Equip_Records(String cATEGORY, String sUB_CTGRY, String sERIAL_NO,
 		String sUPPLIER_NAME, String sUP_ADD_L1, String sUP_ADD_L2,
 		String sp_Ct_Fname, String sp_Ct_Lname, int sUP_CT_PHONE,
 		int aLT_PHONE, String eMAIL_ID, String sP_INV_LIST, String sP_MFC_EQP,
-		int isActive, Date created_Date) {
+		short isActive, Date created_Date) {
 	super();
 	CATEGORY = cATEGORY;
 	SUB_CTGRY = sUB_CTGRY;
@@ -83,8 +83,8 @@ public Equip_Records(String cATEGORY, String sUB_CTGRY, String sERIAL_NO,
 	SUPPLIER_NAME = sUPPLIER_NAME;
 	SUP_ADD_L1 = sUP_ADD_L1;
 	SUP_ADD_L2 = sUP_ADD_L2;
-	SP_CT_FNAME = sp_Ct_Fname;
-	SP_CT_LNAME = sp_Ct_Lname;
+	Sp_Ct_Fname = sp_Ct_Fname;
+	Sp_Ct_Lname = sp_Ct_Lname;
 	SUP_CT_PHONE = sUP_CT_PHONE;
 	ALT_PHONE = aLT_PHONE;
 	EMAIL_ID = eMAIL_ID;
@@ -303,19 +303,19 @@ public void setSUP_ADD_L2(String sUP_ADD_L2) {
 }
 
 public String getSp_Ct_Fname() {
-	return SP_CT_FNAME;
+	return Sp_Ct_Fname;
 }
 
 public void setSp_Ct_Fname(String sp_Ct_Fname) {
-	SP_CT_FNAME = sp_Ct_Fname;
+	Sp_Ct_Fname = sp_Ct_Fname;
 }
 
 public String getSp_Ct_Lname() {
-	return SP_CT_LNAME;
+	return Sp_Ct_Lname;
 }
 
 public void setSp_Ct_Lname(String sp_Ct_Lname) {
-	SP_CT_LNAME = sp_Ct_Lname;
+	Sp_Ct_Lname = sp_Ct_Lname;
 }
 
 public int getSUP_CT_PHONE() {
@@ -358,11 +358,11 @@ public void setSP_MFC_EQP(String sP_MFC_EQP) {
 	SP_MFC_EQP = sP_MFC_EQP;
 }
 
-public int getIsActive() {
+public short getIsActive() {
 	return IsActive;
 }
 
-public void setIsActive(int isActive) {
+public void setIsActive(short isActive) {
 	IsActive = isActive;
 }
 

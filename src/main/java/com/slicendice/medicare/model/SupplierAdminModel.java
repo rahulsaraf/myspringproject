@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class SupplierAdminModel {
 
+	private int supplierid;
 	private String Sp_Name;
 	private String Sp_Addr_L1;
 	private String Sp_Addr_L2;
@@ -16,7 +17,7 @@ public class SupplierAdminModel {
 	private int Sp_Ct_Phone;
 	private int Alt_phone;
 	private String Email_ID;
-	private int IsActive;
+	private short IsActive;
 	private Date Created_Date;
 	
 	public SupplierAdminModel()
@@ -27,7 +28,7 @@ public class SupplierAdminModel {
 	public SupplierAdminModel(String sp_Name, String sp_Addr_L1,
 			String sp_Addr_L2, String suburb, String sp_City, String sp_Zip,
 			String sp_Country, String sp_Ct_Fname, String sp_Ct_Lname,
-			int sp_Ct_Phone, int alt_phone, String email_ID, int isActive,
+			int sp_Ct_Phone, int alt_phone, String email_ID, short isActive,
 			Date created_Date) {
 		super();
 		Sp_Name = sp_Name;
@@ -44,6 +45,14 @@ public class SupplierAdminModel {
 		Email_ID = email_ID;
 		IsActive = isActive;
 		Created_Date = created_Date;
+	}
+
+	public int getSupplierid() {
+		return supplierid;
+	}
+
+	public void setSupplierid(int supplierid) {
+		this.supplierid = supplierid;
 	}
 
 	public String getSp_Name() {
@@ -142,11 +151,11 @@ public class SupplierAdminModel {
 		Email_ID = email_ID;
 	}
 
-	public int getIsActive() {
+	public short getIsActive() {
 		return IsActive;
 	}
 
-	public void setIsActive(int isActive) {
+	public void setIsActive(short isActive) {
 		IsActive = isActive;
 	}
 

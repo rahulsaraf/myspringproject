@@ -21,7 +21,7 @@ public class ESR_SR_Schd_MtModel {
 	private String FLT_PRIORITY;
 	private String ADD_DESC;
 	private String REMARKS;
-	private int IsActive;
+	private short IsActive;
 	private Date Created_Date;
 	
 	public ESR_SR_Schd_MtModel()
@@ -34,7 +34,7 @@ public class ESR_SR_Schd_MtModel {
 			String eQP_DESC, String wAR_TYPE, Date wAR_EXP_DATE,
 			String wORKSHOP, String sCHD_MAINT, String eMGY_MAINT,
 			Date fLT_DATE, String fLT_DESC, String fLT_PRIORITY,
-			String aDD_DESC, String rEMARKS, int isActive, Date created_Date) {
+			String aDD_DESC, String rEMARKS, short isActive, Date created_Date) {
 		super();
 		INT_Asset_No = iNT_Asset_No;
 		S_Num = s_Num;
@@ -193,11 +193,11 @@ public class ESR_SR_Schd_MtModel {
 		REMARKS = rEMARKS;
 	}
 
-	public int getIsActive() {
+	public short getIsActive() {
 		return IsActive;
 	}
 
-	public void setIsActive(int isActive) {
+	public void setIsActive(short isActive) {
 		IsActive = isActive;
 	}
 
