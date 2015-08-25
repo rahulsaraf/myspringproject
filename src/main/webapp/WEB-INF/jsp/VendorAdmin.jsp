@@ -59,7 +59,8 @@
 	<div id="vendoradmindetails" role="tabpanel" class="container tab-pane active">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Vendor Administration Details</h4>
+				<h4 style="display:inline-block;" class="modal-title">Vendor Administration Details</h4>
+				<a style="display:inline-block; float:right;" href="vendorAdminListPage">Return to Vendor Administration List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this
@@ -158,7 +159,8 @@
 <div id="vendoradditionaldetails" role="tabpanel" class="container tab-pane">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Vendor Additional Details</h4>
+				<h4 style="display:inline-block;" class="modal-title">Vendor Additional Details</h4>
+				<a style="display:inline-block; float:right;" href="vendorAdminListPage">Return to Vendor Administration List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this

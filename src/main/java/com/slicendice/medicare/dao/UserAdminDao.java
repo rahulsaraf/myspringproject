@@ -24,27 +24,27 @@ public class UserAdminDao {
 	@Autowired
 	DBConnector connector;
 	
-	public List<UserAdminModel> getUserAdminList(String vendorName){
+	public List<UserAdminModel> getUserAdminList(String userName){
 		String SQL;
-		SQL = "SELECT * FROM pems_database.vendor_admin ";
+		SQL = "SELECT * FROM pems_database.User_admin ";
 		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
 		List<String> params = new ArrayList<String>();
-		if(null != vendorName && !vendorName.isEmpty()){
-			SQL = SQL + "WHERE Vendor_Name LIKE ? ";
-			params.add("%"+vendorName+"%");
+		if(null != userName && !userName.isEmpty()){
+			SQL = SQL + "WHERE Usr_Name LIKE ? ";
+			params.add("%"+userName+"%");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
 		return records;
 	}
 
-	public List<UserAdminModel> getUserAdminDetailList(String vendorId) {
+	public List<UserAdminModel> getUserAdminDetailList(String loginId) {
 		String SQL;
-		SQL = "SELECT * FROM pems_database.vendor_admin ";
+		SQL = "SELECT * FROM pems_database.User_admin ";
 		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
 		List<String> params = new ArrayList<String>();
-		if(null != vendorId && !vendorId.isEmpty()){
-			SQL = SQL + "WHERE Vendor_id = ?";
-			params.add(vendorId);
+		if(null != loginId && !loginId.isEmpty()){
+			SQL = SQL + "WHERE Login_ID = ?";
+			params.add(loginId);
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
 		return records;	}

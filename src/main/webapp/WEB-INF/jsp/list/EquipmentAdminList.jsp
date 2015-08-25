@@ -40,9 +40,9 @@
 					method="POST">
 					<fieldset>
 						<legend>
-							<span> Equipment Admin List Page</span>
-							<button type="button" class="btn btn-primary pull-right" data-toggle="modal"
-								data-target="#createNewUser">
+							<span> Equipment Administration List Page</span>
+							<button type="button" class="btn btn-primary pull-right"
+							onclick="window.location.href='EquipAdmin'">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 								Enter New Equipment
 							</button>

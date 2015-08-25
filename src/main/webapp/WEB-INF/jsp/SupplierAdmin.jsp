@@ -58,7 +58,8 @@
 	<div id="equipdetails" role="tabpanel" class="container tab-pane active">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Supplier Administration Details</h4>
+				<h4 style="display:inline-block;" class="modal-title">Supplier Administration Details</h4>
+				<a style="display:inline-block; float:right;" href="supplierAdminListPage">Return to Supplier Administration List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this

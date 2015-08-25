@@ -51,7 +51,8 @@
 	<div id="equipadmindetails" role="tabpanel" class="container tab-pane active">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Equipment Admin Details</h4>
+				<h4 style="display:inline-block;" class="modal-title">Equipment Administration Details</h4>
+				<a style="display:inline-block; float:right;" href="equipAdminListPage">Return to Equipment Administration List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information about Equipment Admin</p>
@@ -176,7 +177,8 @@
 <div id="eqipadditionaldetails" role="tabpanel" class="container tab-pane">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Additional Information</h4>
+				<h4 style="display:inline-block;" class="modal-title">Additional Information</h4>
+				<a style="display:inline-block; float:right;" href="equipAdminListPage">Return to Equipment Administration List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter the additional infotmation about the equipments</p>

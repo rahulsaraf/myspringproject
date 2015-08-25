@@ -58,7 +58,8 @@
 	<div id="equipdetails" role="tabpanel" class="container tab-pane active">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">User Administration Details</h4>
+				<h4 style="display:inline-block;" class="modal-title">User Administration Details</h4>
+				<a style="display:inline-block; float:right;" href="userAdminListPage">Return to User Administration List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this
@@ -72,65 +73,49 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">User First Name :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="firstname"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="firstname" name="firstname">
+									<input type="text" class="form-control"  value="${record.f_Name}"  id="firstname" name="firstname">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">User Last Name :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="lastname"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="lastname" name="lastname">
+									<input type="text" class="form-control"  value="${record.l_Name}"  id="lastname" name="lastname">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Organization :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="organization1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="organization" name="organization">
+									<input type="text" class="form-control"  value="${record.organisation}"  id="organization" name="organization">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Login ID :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="loginid1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="loginid" name="loginid">
+									<input type="text" class="form-control"  value="${record.login_ID}"  id="loginid" name="loginid">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Department :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="dept1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="dept" name="dept">
+									<input type="text" class="form-control"  value="${record.department}"  id="dept" name="dept">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Password :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="password1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="password" name="password">
+									<input type="text" class="form-control"  value="${record.password}"  id="password" name="password">
 								</div>
 							</div>
 							
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Section :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="section1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="section" name="section">
+									<input type="text" class="form-control"  value="${record.section}"  id="section" name="section">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Confirm Password :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="confirmpswd1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="confirmpswd" name="confirmpswd1">
+									<input type="text" class="form-control"  value="${record.confirm_Password}" id="confirmpswd" name="confirmpswd1">
 								</div>
 							</div>
 							
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">User Full Name :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="fullname1"
+									<input type="text" class="form-control"  value="${record.l_Name}, ${record.f_Name}" id="fullname1"
 										disabled="disabled" name = "fullname">
 								</div>
 							</div>
@@ -138,42 +123,42 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Employee ID :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="employeeid1"
+									<input type="text" class="form-control"  value="${record.emp_ID}" id="employeeid1"
 										disabled="disabled" name = "employeeid">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">User Contact Phone :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="contactphone1"
+									<input type="text" class="form-control"  value="${record.usr_Ct_Phone}" id="contactphone1"
 										disabled="disabled" name = "contactphone">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Alternate Phone :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="alternatephone1"
+									<input type="text" class="form-control"  value="${record.alt_phone}" id="alternatephone1"
 										disabled="disabled" name = "alternatephone">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Email Address :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="emailadddress1"
+									<input type="text" class="form-control"  value="${record.email_ID}" id="emailadddress1"
 										disabled="disabled" name = "emailaddress">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Manager Name :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="managername1"
+									<input type="text" class="form-control"  value="${record.manager_Name}" id="managername1"
 										disabled="disabled" name = "managername">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Manager ID :</label>
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="managerid1"
+									<input type="text" class="form-control"  value="${record.manager_Id}" id="managerid1"
 										disabled="disabled" name = "managerid">
 								</div>
 							</div>

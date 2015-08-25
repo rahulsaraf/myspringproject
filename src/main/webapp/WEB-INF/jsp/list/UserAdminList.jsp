@@ -36,7 +36,7 @@
 	<div class="container row">
 			<div class="well bs-component">
 			<div>
-				<form class="form-horizontal" name="searchvendoradmin" action="searchvendoradmin"
+				<form class="form-horizontal" name="searchuseradmin" action="searchuseradmin"
 					method="POST">
 					<fieldset>
 						<legend>
@@ -97,9 +97,9 @@
 								<td id="branch_id${booksIndex.index}"><c:out
 										value="${record.emp_ID}" /></td>
 								<td id="branchName${booksIndex.index}"><c:out
-										value="${record.Password}" /></td>
-								<td><c:out value="${record.Confirm_Password}" /></td>
-								<td><c:out value="${record.User_Access}" /></td>
+										value="${record.password}" /></td>
+								<td><c:out value="${record.confirm_Password}" /></td>
+								<td><c:out value="${record.user_Access}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>
