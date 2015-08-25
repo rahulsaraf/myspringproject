@@ -20,18 +20,22 @@ public class VendorAdminMapper implements RowMapper<VendorAdminModel>{
 	@Override
 	public VendorAdminModel mapRow(ResultSet rs, int arg1) throws SQLException {
 		VendorAdminModel records = new VendorAdminModel();
-		records.setSupplierid(rs.getInt("Sp_id"));
-		records.setSp_Name(rs.getString("Sp_Name"));
-		records.setSp_Addr_L1(rs.getString("Sp_Addr_L1"));
-		records.setSp_Addr_L2(rs.getString("Sp_Addr_L2"));
-		records.setSuburb(rs.getString("Suburb"));
-		records.setSp_City(rs.getString("Sp_City"));
-		records.setSp_Zip(rs.getString("Sp_Zip"));
-		records.setSp_Country(rs.getString("Sp_Country"));
-		records.setSp_Ct_Fname(rs.getString("Sp_Ct_Name"));
-		records.setSp_Ct_Phone(rs.getInt("Sp_Ct_Phone"));
-		records.setAlt_phone(rs.getInt("Alt_phone"));
+		records.setVendorid(rs.getInt("Vendor_id"));
+		records.setVendor_Name(rs.getString("Vendor_Name"));
+		records.setVendor_Desc(rs.getString("Vendor_Desc"));
+		records.setVen_Addr_l1(rs.getString("Ven_Addr_l1"));
+		records.setVen_Addr_l2(rs.getString("Ven_Addr_l2"));
+		records.setVen_Addr_l3(rs.getString("Ven_Addr_l3"));
+		records.setVen_Country(rs.getString("Ven_Country"));
+		records.setVen_Ct_Name(rs.getString("Ven_Ct_Name"));
+		records.setVen_Ct_Phone(rs.getString("Ven_Ct_Phone"));
+		records.setAlt_Phone(rs.getString("Alt_Phone"));
 		records.setEmail_ID(rs.getString("Email_ID"));
+		records.setIs_Ven_Supp(rs.getShort("Is_Ven_Supp"));
+		records.setIs_Ven_Manuf(rs.getShort("Is_Ven_Manuf"));
+		records.setIs_Ven_Preffd(rs.getShort("Is_Ven_Preffd"));
+		records.setDVS_Spares(rs.getShort("DVS_Spares"));
+		records.setAdd_Re(rs.getString("Add_Re"));
 		records.setIsActive(rs.getShort("IsActive"));
 		records.setCreated_Date(rs.getDate("Created_Date"));
 		return records;

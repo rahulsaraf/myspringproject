@@ -34,4 +34,11 @@ public class BaseListPageController {
 	   public String redirectVendorAdminListPage(ModelMap model) {
 	      return "/list/VendorAdminList";
 	   }
+	   
+	   @RequestMapping(value="/userAdminListPage", method=RequestMethod.GET)
+	   public String redirectUserAdminListPage(ModelMap model) {
+	      return "/list/UserAdminList";
+	   }
+
+	   
 }

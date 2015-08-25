@@ -74,7 +74,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Vendor Name :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendorname"
-										disabled="disabled" name = "vendorname">
+										disabled="disabled" name = "vendorname" value="${record.vendor_Name}">
 								</div>
 							</div>
 							
@@ -82,7 +82,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Vendor Description :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendordescription"
-										disabled="disabled" name = "vendordescription">
+										disabled="disabled" name = "vendordescription" value="${record.vendor_Desc}">
 								</div>
 							</div>
 							
@@ -90,7 +90,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Vendor Address Line 1 :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendoraddress1"
-										disabled="disabled" name = "vendoraddressline1">
+										disabled="disabled" name = "vendoraddressline1" value="${record.ven_Addr_l1}">
 								</div>
 							</div>
 							
@@ -98,28 +98,28 @@
 								<label for="bookId" class="col-lg-3 text-left">Vendor Address Line 2 :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendoraddress2"
-										disabled="disabled" name = "vendoraddressline2">
+										disabled="disabled" name = "vendoraddressline2" value="${record.ven_Addr_l2}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">City :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="city1"
-										disabled="disabled" name = "city">
+										disabled="disabled" name = "city" value="${record.ven_Addr_l3}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Vendor Country :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendorcountry1"
-										disabled="disabled" name = "vendorcountry">
+										disabled="disabled" name = "vendorcountry" value="${record.ven_Country}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Vendor Contact Name :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendorcontact1"
-										disabled="disabled" name = "vendorcontactname">
+										disabled="disabled" name = "vendorcontactname" value="${record.ven_Ct_Name}">
 								</div>
 							</div>
 							
@@ -127,21 +127,21 @@
 								<label for="bookId" class="col-lg-3 text-left">Vendor Contact Phone :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="vendorcontactphone1"
-										disabled="disabled" name = "vendorcontactphone">
+										disabled="disabled" name = "vendorcontactphone" value="${record.ven_Ct_Phone}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Alternate Phone :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="alternatephone1"
-										disabled="disabled" name = "alternatephone">
+										disabled="disabled" name = "alternatephone" value="${record.alt_Phone}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Email Address :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="emailaddress1"
-										disabled="disabled" name = "vendoremail">
+										disabled="disabled" name = "vendoremail" value="${record.email_ID}">
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -172,40 +172,32 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Is Vendor Supplier Also? :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="isvendorsupplier1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="isvendorsupplier" name="isvendorsupplier">
+									<input type="text" class="form-control"  id="isvendorsupplier" name="isvendorsupplier" value="${record.is_Ven_Supp}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Is Vendor Manufacturer Also? :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="isvendormanufacturer1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="isvendormanufacturer" name="isvendormanufacturer">
+									<input type="text" class="form-control"  id="isvendormanufacturer" name="isvendormanufacturer" value="${record.is_Ven_Manuf}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Is Vendor Preferred? :</label>
 								<div class="col-lg-8">
 									<input type="text" class="form-control" id="isvendorpreferred"
-										disabled="disabled">
+										disabled="disabled" value="${record.is_Ven_Preffd}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Does Vendor Supply Spares? :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="doesvendorspares1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="doesvendorspares" name="doesvendorspares">
+									<input type="text" class="form-control" name="doesvendorspares" value="${record.DVS_Spares}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Additional Remarks :</label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" id="remarks1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="remarks" name="remarks">
+									<input type="text" class="form-control" id="remarks" name="remarks" value="${record.add_Re}">
 								</div>
 							</div>
 							<div class="modal-footer">

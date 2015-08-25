@@ -14,7 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<title>Vendor Administration List Page</title>
+<title>User Administration List Page</title>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -22,8 +22,8 @@
 	});
 	
 	function submitForm(serialNo){
-		$("#vendoridinput").val(serialNo);
-		document.vendorAdminDetail.submit(); 
+		$("#useridinput").val(serialNo);
+		document.userAdminDetail.submit(); 
 		return false;
 	}
 	
@@ -40,7 +40,7 @@
 					method="POST">
 					<fieldset>
 						<legend>
-							<span> Vendor Administration List Page</span>
+							<span> User Administration List Page</span>
 							<button type="button" class="btn btn-default pull-right"
 								data-toggle="collapse" data-target="#criteria">
 								<span class="glyphicon glyphicon-menu-hamburger"
@@ -50,17 +50,17 @@
 						<div id="criteria">
 							<div class="form-group">
 								<label for="assetNo" class="col-lg-2 control-label">
-									Vendor Name: </label>
+									User Name: </label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control" id="vendorName"
-										name="vendorName" placeholder="Vendor Name" value="${vendorName}">
+									<input type="text" class="form-control" id="userName"
+										name="userName" placeholder="User Name" value="${userName}">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-2">
 									<button type="reset" class="btn btn-default">Cancel</button>
 									<button type="submit" class="btn btn-primary">Search
-										Vendor</button>
+										User</button>
 								</div>
 							</div>
 						</div>
@@ -68,44 +68,38 @@
 				</form>
 				</div>
 				<div class="table-responsive">
-				<form class="form-horizontal" name="vendorAdminDetail" action="vendorAdminDetail"
+				<form class="form-horizontal" name="userAdminDetail" action="userAdminDetail"
 					method="GET">
 					<fieldset>
-					<input id="vendoridinput" type="hidden" name="vendorid" value="123">
+					<input id="useridinput" type="hidden" name="userid" value="123">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-						<th>Vendor  Name</th>
-						<th>Vendor  Description</th>
-						<th>Vendor  Address  line1</th>
-						<th>Vendor  Address  line2</th>
-						<th>Vendor  Address  line3</th>
-						<th>Vendor  Country</th>
-						<th>Vendor  Contact  Name</th>
-						<th>Vendor  Contact  Phone</th>
-						<th>Alternate  Phone</th>
-						<th>Email  ID</th>
+					<th>Login ID</th> 
+					<th>User first name</th>
+					<th>User Last name</th>
+					<th>Employee id</th>
+					<th>Password</th>
+					<th>Confirm Password</th>
+					<th>User Access</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${records}" var="record" varStatus="recordIndex">
 							<tr>
 								<td id="book_id${recordIndex.index}">
-								<a href="vendorAdminDetail?vendorid=${record.vendorid}" onclick="submitForm(${record.vendorid})" style="display:block;">
-								<c:out		value="${record.vendor_Name}" /></a>
+								<a href="userAdminDetail?userid=${record.login_ID}" onclick="submitForm(${record.login_ID})" style="display:block;">
+								<c:out		value="${record.login_ID}" /></a>
 								</td>
 								<td id="title${booksIndex.index}"><c:out
-										value="${record.vendor_Desc}" /></td>
-								<td><c:out value="${record.ven_Addr_l1}" /></td>
+										value="${record.f_Name}" /></td>
+								<td><c:out value="${record.l_Name}" /></td>
 								<td id="branch_id${booksIndex.index}"><c:out
-										value="${record.ven_Addr_l2}" /></td>
+										value="${record.emp_ID}" /></td>
 								<td id="branchName${booksIndex.index}"><c:out
-										value="${record.ven_Addr_l3}" /></td>
-								<td><c:out value="${record.ven_Country}" /></td>
-								<td><c:out value="${record.ven_Ct_Name}" /></td>
-								<td><c:out value="${record.ven_Ct_Phone}" /></td>
-								<td><c:out value="${record.alt_Phone}" /></td>
-								<td><c:out value="${record.email_ID}" /></td>
+										value="${record.Password}" /></td>
+								<td><c:out value="${record.Confirm_Password}" /></td>
+								<td><c:out value="${record.User_Access}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>

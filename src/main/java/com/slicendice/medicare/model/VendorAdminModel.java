@@ -1,9 +1,10 @@
-package com.slicendice.medicare.model;
+	package com.slicendice.medicare.model;
 
 import java.util.Date;
 
 public class VendorAdminModel {
 
+private int vendorid;
 private String Vendor_Name;
 private String Vendor_Desc;
 private String Ven_Addr_l1;
@@ -21,6 +22,14 @@ private short DVS_Spares;
 private String Add_Re;
 private short IsActive;
 private Date Created_Date;
+
+public int getVendorid() {
+	return vendorid;
+}
+
+public void setVendorid(int vendorid) {
+	this.vendorid = vendorid;
+}
 
 public VendorAdminModel()
 {

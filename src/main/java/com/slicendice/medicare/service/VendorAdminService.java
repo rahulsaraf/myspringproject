@@ -26,7 +26,7 @@ public class VendorAdminService {
 	}
 
 
-	public List<VendorAdminModel> getSupplierAdminDetailList(String equipId) {
+	public List<VendorAdminModel> getVendorAdminDetailList(String equipId) {
 		return vendorAdminDao.getVendorAdminDetailList(equipId);
 	}
 	

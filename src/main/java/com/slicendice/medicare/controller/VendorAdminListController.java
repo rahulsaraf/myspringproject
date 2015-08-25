@@ -31,15 +31,15 @@ public class VendorAdminListController {
 			   ModelMap model) {
 		List<VendorAdminModel> records = vendorAdminService.getVendorAdminList(vendorName);
 		  model.addAttribute("records",records);
-		  model.addAttribute("supplierName",vendorName);
-	      return "/list/SupplierAdminList";
+		  model.addAttribute("vendorName",vendorName);
+	      return "/list/VendorAdminList";
 	   }
 	
-	@RequestMapping(value="/supplierAdminDetail", method=RequestMethod.GET)
+	@RequestMapping(value="/vendorAdminDetail", method=RequestMethod.GET)
 	public String redirectEquipAdminDetailPage(@RequestParam("vendorid") String vendorid, ModelMap model){
-		List<VendorAdminModel> records = vendorAdminService.getSupplierAdminDetailList(vendorid);
+		List<VendorAdminModel> records = vendorAdminService.getVendorAdminDetailList(vendorid);
 		model.addAttribute("record", records.get(0));
-		return "SupplierAdmin";
+		return "VendorAdmin";
 	}
 
 }

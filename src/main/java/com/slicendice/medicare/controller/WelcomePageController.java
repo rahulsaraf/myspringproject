@@ -17,7 +17,7 @@ public class WelcomePageController {
 	
    @RequestMapping(value="/", method=RequestMethod.GET)
    public String redirectWelcomePage(ModelMap model) {
-      return "welcome";
+      return "Login";
    }
    
    @RequestMapping(value="/medicalequipment", method=RequestMethod.GET)
