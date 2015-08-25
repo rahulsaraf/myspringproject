@@ -5,6 +5,11 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
 <%@ include file="header.html"%>
+<%@ page session="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -55,9 +60,8 @@
 				<a style="display:inline-block; float:right;" href="equipAdminListPage">Return to Equipment Administration List</a>
 			</div>
 			<div class="modal-body">
-				<p>Please enter following information about Equipment Admin</p>
-				<form class="form-horizontal" name="checkoutbook"
-					action="checkoutbook" method="GET">
+				<p>Please enter following information about Equipment Administration</p>
+				<form class="form-horizontal" name="createNewEquipment" action="createNewEquipment"  modelAttribute="equipmentAdminForm" method="GET">
 					<fieldset>
 						<legend> </legend>
 						<div id="criteria">

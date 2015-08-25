@@ -8,12 +8,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.slicendice.medicare.model.EquipAdminModel;
-import com.slicendice.medicare.model.Equip_Records;
 import com.slicendice.medicare.service.EquipmentAdminService;
 
 /**
@@ -41,5 +41,17 @@ public class EquipmentAdminListController {
 		List<EquipAdminModel> records = equipmentAdminService.getEquipAdminDetailList(equipId);
 		model.addAttribute("record", records.get(0));
 		return "EquipAdmin";
-	}	
+	}
+	
+	
+	
+	
+	@RequestMapping(value="/createEquipAdmin", method=RequestMethod.POST)
+	public String createEquipAdminDetailPage(@ModelAttribute("equipmentAdminForm") EquipAdminModel equipAdminModel, ModelMap model){
+		//System.out.println("I am here");
+		int success = equipmentAdminService.createEquipmentAdminRecord(equipAdminModel);
+		return "/list/EquipmentAdminList";
+	}
+	
+	
 }

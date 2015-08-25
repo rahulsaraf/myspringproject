@@ -5,6 +5,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
 <%@ include file="header.html"%>
+<%@ page session="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -56,109 +62,143 @@
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this
 					book</p>
-				<form class="form-horizontal" name="checkoutbook"
+					
+					
+				<form:form class="form-horizontal" name="submitEquipment"  modelAttribute="medicalEquipmentForm"
 					action="checkoutbook" method="GET">
 					<fieldset>
 						<legend> </legend>
 						<div id="criteria">
 
 							<div class="form-group">
+							
 								<label for="bookId" class="col-lg-2 text-left">Category :</label>
+								<spring:bind path="CATEGORY">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="category1"
-										disabled="disabled" value="${record.CATEGORY}">
+									<form:input  path="CATEGORY" type="text" class="form-control" id="category1"
+										disabled="disabled" value="${record.CATEGORY}"/>
 								</div>
+								</spring:bind>
+								<spring:bind path="SERIAL_NO">
 								<label for="branchId" class="col-lg-3 text-left ">Serial Number :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="serialNo1"
-										disabled="disabled" value="${record.SERIAL_NO}">
+									<form:input path="SERIAL_NO" type="text" class="form-control" id="serialNo1"
+										disabled="disabled" value="${record.SERIAL_NO}"/>
 								</div>
+								</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Sub Category :</label>
+								<spring:bind path="SUB_CTGRY">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="subcategory1"
-										disabled="disabled" value="${record.SUB_CTGRY}">
+									<form:input path="SUB_CTGRY"type="text" class="form-control" id="subcategory1"
+										disabled="disabled" value="${record.SUB_CTGRY}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Manufacturer Name :</label>
+								<spring:bind path="MANUF_NAME">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="manufacturer1"
-										disabled="disabled" value="${record.MANUF_NAME}">
+									<form:input path="MANUF_NAME" type="text" class="form-control" id="manufacturer1"
+										disabled="disabled" value="${record.MANUF_NAME}"/>
 								</div>
+								</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Name :</label>
+								<spring:bind path="EQP_NAME">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equipname1"
-										disabled="disabled" value="${record.EQP_NAME}">
+									<form:input path="EQP_NAME" type="text" class="form-control" id="equipname1"
+										disabled="disabled" value="${record.EQP_NAME}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Internal Asset Number :</label>
+								<spring:bind path="INT_AST_NO">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="assetno1"
-										disabled="disabled" value="${record.INT_AST_NO}">
+									<form:input path="INT_AST_NO" type="text" class="form-control" id="assetno1"
+										disabled="disabled" value="${record.INT_AST_NO}"/>
 								</div>
+								</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Equipment Description :</label>
+								<spring:bind path="EQP_DESC">
 								<div class="col-lg-7">
-									<input type="text" class="form-control" id="equipdescription"
-										disabled="disabled" name = "equipdescription" value="${record.EQP_DESC}">
+									<form:input path="EQP_DESC" type="text" class="form-control" id="equipdescription"
+										disabled="disabled" name = "equipdescription" value="${record.EQP_DESC}"/>
 								</div>
+										</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Type :</label>
+								<spring:bind path="EQP_TYPE">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equiptype1"
-										disabled="disabled" value="${record.EQP_TYPE}">
+									<form:input path="EQP_TYPE" type="text" class="form-control" id="equiptype1"
+										disabled="disabled" value="${record.EQP_TYPE}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Delivery Date :</label>
+								<spring:bind path="DEL_DATE">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="deliverydate1"
-										disabled="disabled" value="${record.DEL_DATE}">
+									<form:input path="DEL_DATE" type="text" class="form-control" id="deliverydate1"
+										disabled="disabled" value="${record.DEL_DATE}"/>
 								</div>
+								</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Model Number :</label>
+								<spring:bind path="MODEL_NO">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="modelnumber1"
-										disabled="disabled" value="${record.MODEL_NO}">
+									<form:input path="MODEL_NO"  type="text" class="form-control" id="modelnumber1"
+										disabled="disabled" value="${record.MODEL_NO}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Vendor Name :</label>
+								<spring:bind path="VEN_NAME">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="vendorname1"
-										disabled="disabled" value="${record.VEN_NAME}">
+									<form:input path="VEN_NAME" type="text" class="form-control" id="vendorname1"
+										disabled="disabled" value="${record.VEN_NAME}"/>
 								</div>
+								</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Equipment Class :</label>
+								<spring:bind path="EQP_CLASS">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="equipclass1"
-										disabled="disabled" value="${record.EQP_CLASS}">
+									<form:input path="EQP_CLASS" type="text" class="form-control" id="equipclass1"
+										disabled="disabled" value="${record.EQP_CLASS}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Invoice Number :</label>
+								<spring:bind path="INVOICE_NO">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="invoicenumber1"
-										disabled="disabled" value="${record.INVOICE_NO}">
+									<form:input path="INVOICE_NO" type="text" class="form-control" id="invoicenumber1"
+										disabled="disabled" value="${record.INVOICE_NO}"/>
 								</div>
+								</spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Warrenty Type :</label>
+								<spring:bind path="WARTY_TYPE">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="warrentytype1"
-										disabled="disabled" value="${record.WARTY_TYPE}">
+									<form:input path="WARTY_TYPE" type="text" class="form-control" id="warrentytype1"
+										disabled="disabled" value="${record.WARTY_TYPE}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Invoice Date :</label>
+								<spring:bind path="INVOICE_DATE">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="invoicedate1"
-										disabled="disabled" value="${record.INVOICE_DATE}">
-								</div>
+									<form:input path="INVOICE_DATE" type="text" class="form-control" id="invoicedate1"
+										disabled="disabled" value="${record.INVOICE_DATE}"/>
+								</div></spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Warrenty End Date :</label>
+								<spring:bind path="WARTY_END_DATE">
 								<div class="col-lg-3">
-									<input type="text" class="form-control" id="warrentyenddate1"
-										disabled="disabled" value="${record.WARTY_END_DATE}">
+									<form:input path="WARTY_END_DATE" type="text" class="form-control" id="warrentyenddate1"
+										disabled="disabled" value="${record.WARTY_END_DATE}"/>
 								</div>
+								</spring:bind>
 								<label for="branchId" class="col-lg-3 text-left">Indent Number :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="indentnumber1"
@@ -192,7 +232,7 @@
 							</div>
 						</div>
 					</fieldset>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

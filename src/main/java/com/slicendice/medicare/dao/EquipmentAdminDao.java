@@ -48,4 +48,45 @@ public class EquipmentAdminDao {
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new EquipmentAdminMapper());
 		return records;	}
+
+	public int createEquipmentAdminRecord(EquipAdminModel equipAdminModel) {
+		String SQL = "INSERT INTO pems_database.equip_admin(int_asset_no,serial_no,eqp_name,eqp_desc,"
+				+ "eqp_del_date,manf_name,vendor_name,supplier_name,model_no,equip_type,invoice_no,"
+				+ "equip_class,invoice_date,category,wrty_type,sub_ctgry,wrty_end_date,st_comp,doc_rvcd,"
+				+ "equip_manuals,service_manuals,ote_needed,calib_certi,accessories,trng_done,dept_trnd,"
+				+ "spares_List,add_re,isactive,created_date)"
+				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		return connector.getJdbcTemplateObject().update(SQL,
+				equipAdminModel.getInt_Asset_no(),
+				equipAdminModel.getSerial_No(),
+				equipAdminModel.getEqp_Name(),
+				equipAdminModel.getEqp_Desc(),
+				equipAdminModel.getEqp_Del_Date(),
+				equipAdminModel.getManf_Name(),
+				equipAdminModel.getVendor_Name(),
+				equipAdminModel.getSupplier_Name(),
+				equipAdminModel.getModel_No(),
+				equipAdminModel.getEquip_Type(),
+				equipAdminModel.getInvoice_No(),
+				equipAdminModel.getEquip_Class(),
+				equipAdminModel.getInvoice_Date(),
+				equipAdminModel.getCategory(),
+				equipAdminModel.getWrty_Type(),
+				equipAdminModel.getSub_Ctgry(),
+				equipAdminModel.getWrty_End_Date(),
+				equipAdminModel.getST_Comp(),
+				equipAdminModel.getDoc_rcvd(),
+				equipAdminModel.getEquip_Manuals(),
+				equipAdminModel.getService_Manuals(),
+				equipAdminModel.getOTE_Needed(),
+				equipAdminModel.getCalib_Certi(),
+				equipAdminModel.getAccessories(),
+				equipAdminModel.getTrng_Done(),
+				equipAdminModel.getDept_Trnd(),
+				equipAdminModel.getSpares_List(),
+				equipAdminModel.getAdd_Re(),
+				equipAdminModel.getIsActive(),
+				equipAdminModel.getCreated_Date()
+				);
+		}
 }

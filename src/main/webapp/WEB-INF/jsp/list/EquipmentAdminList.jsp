@@ -42,7 +42,7 @@
 						<legend>
 							<span> Equipment Administration List Page</span>
 							<button type="button" class="btn btn-primary pull-right"
-							onclick="window.location.href='EquipAdmin'">
+							onclick="window.location.href='createEquipAdminPage'">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 								Enter New Equipment
 							</button>
