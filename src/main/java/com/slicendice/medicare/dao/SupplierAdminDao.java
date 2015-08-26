@@ -49,4 +49,25 @@ public class SupplierAdminDao {
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new SupplierAdminMapper());
 		return records;	}
+
+	public int createSupplierAdminRecord(SupplierAdminModel supplierAdminModel) {
+		String SQL = "INSERT INTO pems_database.supplier_admin(Sp_Name,Sp_Addr_L1,Sp_Addr_L2,"
+				+ "Suburb,Sp_City,Sp_Zip,Sp_Country,Sp_Ct_Name,Sp_Ct_Phone,Alt_phone,Email_ID,"
+				+ "IsActive,Created_Date)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		return connector.getJdbcTemplateObject().update(SQL,
+				supplierAdminModel.getSp_Name(),
+				supplierAdminModel.getSp_Addr_L1(),
+				supplierAdminModel.getSp_Addr_L2(),
+				supplierAdminModel.getSuburb(),
+				supplierAdminModel.getSp_City(),
+				supplierAdminModel.getSp_Zip(),
+				supplierAdminModel.getSp_Country(),
+				supplierAdminModel.getSp_Ct_Lname() + ", " + supplierAdminModel.getSp_Ct_Fname(),
+				supplierAdminModel.getSp_Ct_Phone(),
+				supplierAdminModel.getAlt_phone(),
+				supplierAdminModel.getEmail_ID(),
+				supplierAdminModel.getIsActive(),
+				supplierAdminModel.getCreated_Date()
+				);
+	}
 }

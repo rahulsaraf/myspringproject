@@ -8,10 +8,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.slicendice.medicare.model.UserAdminModel;
 import com.slicendice.medicare.model.UserAdminModel;
 import com.slicendice.medicare.service.UserAdminService;
 
@@ -39,6 +41,12 @@ public class UserAdminListController {
 	public String redirectEquipAdminDetailPage(@RequestParam("userid") String userid, ModelMap model){
 		List<UserAdminModel> records = userAdminService.getUserAdminDetailList(userid);
 		model.addAttribute("record", records.get(0));
-		return "UserAdmin";
+		return "/adminDetail/UserAdmin";
+	}
+	
+	@RequestMapping(value="/createUserAdmin", method=RequestMethod.POST)
+	public String createUserAdminDetailPage(@ModelAttribute("userAdminForm") UserAdminModel userAdminModel, ModelMap model){
+		int success = userAdminService.createUserAdminRecord(userAdminModel);
+		return "/list/UserAdminList";
 	}
 }

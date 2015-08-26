@@ -41,6 +41,11 @@
 					<fieldset>
 						<legend>
 							<span> Supplier Administration List Page</span>
+							<button type="button" class="btn btn-primary pull-right"
+							onclick="window.location.href='createSupplierAdminPage'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Enter New Supplier
+							</button>
 							<button type="button" class="btn btn-default pull-right"
 								data-toggle="collapse" data-target="#criteria">
 								<span class="glyphicon glyphicon-menu-hamburger"

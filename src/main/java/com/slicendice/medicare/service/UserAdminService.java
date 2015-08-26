@@ -30,5 +30,10 @@ public class UserAdminService {
 	public List<UserAdminModel> getUserAdminDetailList(String equipId) {
 		return userAdminDao.getUserAdminDetailList(equipId);
 	}
+
+
+	public int createUserAdminRecord(UserAdminModel userAdminModel) {
+		return userAdminDao.createUserAdminRecord(userAdminModel);
+	}
 	
 }

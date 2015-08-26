@@ -15,7 +15,7 @@ import com.slicendice.medicare.model.UserAdminModel;
 
 
 /**
- * @author Rahul
+ * @author Rahul 
  *
  */
 @Service
@@ -47,5 +47,31 @@ public class UserAdminDao {
 			params.add(loginId);
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
-		return records;	}
+		return records;	
+		}
+	public int createUserAdminRecord(UserAdminModel userAdminModel) {
+		String SQL = "INSERT INTO pems_database.user_admin(Organisation,Department,"
+				+ "Section,F_Name,L_Name,Emp_ID,Usr_Ct_Phone,Alt_phone,Email_ID,"
+				+ "Login_ID,Password,Confirm_Password,Manager_Name,Manager_Id,User_Access,"
+				+ "IsActive,Created_Date)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		 return connector.getJdbcTemplateObject().update(SQL,
+				 userAdminModel.getOrganisation(),
+				 userAdminModel.getDepartment(),
+				 userAdminModel.getSection(),
+				 userAdminModel.getF_Name(),
+				 userAdminModel.getL_Name(),
+				 userAdminModel.getEmp_ID(),
+				 userAdminModel.getUsr_Ct_Phone(),
+				 userAdminModel.getAlt_phone(),
+				 userAdminModel.getEmail_ID(),
+				 userAdminModel.getLogin_ID(),
+				 userAdminModel.getPassword(),
+				 userAdminModel.getConfirm_Password(),
+				 userAdminModel.getManager_Name(),
+				 userAdminModel.getManager_Id(),
+				 userAdminModel.getUser_Access(),
+				 userAdminModel.getIsActive(),
+				 userAdminModel.getCreated_Date()
+				 );
+	}
 }

@@ -14,7 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<title>Vendor Administration List Page</title>
+<title>Technical Details List Page</title>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -22,8 +22,8 @@
 	});
 	
 	function submitForm(serialNo){
-		$("#vendoridinput").val(serialNo);
-		document.vendorAdminDetail.submit(); 
+		$("#useridinput").val(serialNo);
+		document.userAdminDetail.submit(); 
 		return false;
 	}
 	
@@ -36,15 +36,15 @@
 	<div class="container row">
 			<div class="well bs-component">
 			<div>
-				<form class="form-horizontal" name="searchvendoradmin" action="searchvendoradmin"
+				<form class="form-horizontal" name="searchTechnicalDetails" action="searchTechnicalDetails"
 					method="POST">
 					<fieldset>
 						<legend>
-							<span> Vendor Administration List Page</span>
-							<button type="button" class="btn btn-primary pull-right"
-							onclick="window.location.href='createVendorAdminPage'">
+							<span> Technical Details List Page</span>
+								<button type="button" class="btn btn-primary pull-right"
+							onclick="window.location.href='createTechnicalDetailsPage'">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-								Enter New Vendor
+								Enter New Technician Details
 							</button>
 							<button type="button" class="btn btn-default pull-right"
 								data-toggle="collapse" data-target="#criteria">
@@ -55,17 +55,24 @@
 						<div id="criteria">
 							<div class="form-group">
 								<label for="assetNo" class="col-lg-2 control-label">
-									Vendor Name: </label>
+									Internal Asset Number: </label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control" id="vendorName"
-										name="vendorName" placeholder="Vendor Name" value="${vendorName}">
+									<input type="text" class="form-control" id="assetNo"
+										name="assetNo" placeholder="Internal Asset Number" value="${assetNo}">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="serialNo" class="col-lg-2 control-label">Serial Number:</label>
+								<div class="col-lg-10">
+									<input type="text" class="form-control" id="serialNo" name="serialNo"
+										placeholder="Serial Number" value="${serialNo}">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-2">
 									<button type="reset" class="btn btn-default">Cancel</button>
 									<button type="submit" class="btn btn-primary">Search
-										Vendor</button>
+										User</button>
 								</div>
 							</div>
 						</div>
@@ -73,44 +80,40 @@
 				</form>
 				</div>
 				<div class="table-responsive">
-				<form class="form-horizontal" name="vendorAdminDetail" action="vendorAdminDetail"
+				<form class="form-horizontal" name="userAdminDetail" action="userAdminDetail"
 					method="GET">
 					<fieldset>
-					<input id="vendoridinput" type="hidden" name="vendorid" value="123">
+					<input id="useridinput" type="hidden" name="userid" value="123">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-						<th>Vendor  Name</th>
-						<th>Vendor  Description</th>
-						<th>Vendor  Address  line1</th>
-						<th>Vendor  Address  line2</th>
-						<th>Vendor  Address  line3</th>
-						<th>Vendor  Country</th>
-						<th>Vendor  Contact  Name</th>
-						<th>Vendor  Contact  Phone</th>
-						<th>Alternate  Phone</th>
-						<th>Email  ID</th>
+					<th>Internal Asset Number</th>
+					<th>Serial Number</th>
+					<th>Engineer Name</th>
+					<th>Company Name</th>
+					<th>Manager Name</th>
+					<th>Suburb</th>
+					<th>City</th>
+					<th>Zip</th>
+
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${records}" var="record" varStatus="recordIndex">
 							<tr>
 								<td id="book_id${recordIndex.index}">
-								<a href="vendorAdminDetail?vendorid=${record.vendorid}" onclick="submitForm(${record.vendorid})" style="display:block;">
-								<c:out		value="${record.vendor_Name}" /></a>
+								<a href="userAdminDetail?userid=${record.login_ID}" onclick="submitForm(${record.login_ID})" style="display:block;">
+								<c:out		value="${record.login_ID}" /></a>
 								</td>
 								<td id="title${booksIndex.index}"><c:out
-										value="${record.vendor_Desc}" /></td>
-								<td><c:out value="${record.ven_Addr_l1}" /></td>
+										value="${record.f_Name}" /></td>
+								<td><c:out value="${record.l_Name}" /></td>
 								<td id="branch_id${booksIndex.index}"><c:out
-										value="${record.ven_Addr_l2}" /></td>
+										value="${record.emp_ID}" /></td>
 								<td id="branchName${booksIndex.index}"><c:out
-										value="${record.ven_Addr_l3}" /></td>
-								<td><c:out value="${record.ven_Country}" /></td>
-								<td><c:out value="${record.ven_Ct_Name}" /></td>
-								<td><c:out value="${record.ven_Ct_Phone}" /></td>
-								<td><c:out value="${record.alt_Phone}" /></td>
-								<td><c:out value="${record.email_ID}" /></td>
+										value="${record.password}" /></td>
+								<td><c:out value="${record.confirm_Password}" /></td>
+								<td><c:out value="${record.user_Access}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>

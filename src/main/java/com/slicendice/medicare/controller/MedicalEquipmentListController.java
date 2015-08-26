@@ -41,7 +41,7 @@ public class MedicalEquipmentListController {
 		List<Equip_Records> records = medicalEquipmentService.getMedicalEquipmentList(serialNo, null);
 		model.addAttribute("record", records.get(0));
 		
-		return "medequip";
+		return "MedicalEquipment";
 	}
 	
 }

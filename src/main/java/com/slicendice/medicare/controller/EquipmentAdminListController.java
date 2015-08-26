@@ -40,11 +40,8 @@ public class EquipmentAdminListController {
 	public String redirectEquipAdminDetailPage(@RequestParam("equipId") String equipId, ModelMap model){
 		List<EquipAdminModel> records = equipmentAdminService.getEquipAdminDetailList(equipId);
 		model.addAttribute("record", records.get(0));
-		return "EquipAdmin";
+		return "/adminDetail/EquipAdmin";
 	}
-	
-	
-	
 	
 	@RequestMapping(value="/createEquipAdmin", method=RequestMethod.POST)
 	public String createEquipAdminDetailPage(@ModelAttribute("equipmentAdminForm") EquipAdminModel equipAdminModel, ModelMap model){

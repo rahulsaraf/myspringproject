@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,7 +43,13 @@ public class SupplierAdminListController {
 	public String redirectEquipAdminDetailPage(@RequestParam("supplierid") String supplierId, ModelMap model){
 		List<SupplierAdminModel> records = supplierAdminService.getSupplierAdminDetailList(supplierId);
 		model.addAttribute("record", records.get(0));
-		return "SupplierAdmin";
+		return "/adminDetail/SupplierAdmin";
+	}
+	
+	@RequestMapping(value="/createSupplierAdmin", method=RequestMethod.POST)
+	public String createSupplierAdminDetailPage(@ModelAttribute("supplierAdminForm") SupplierAdminModel supplierAdminModel, ModelMap model){
+		int success = supplierAdminService.createSupplierAdminRecord(supplierAdminModel);
+		return "/list/SupplierAdminList";
 	}
 
 }

@@ -9,6 +9,7 @@ public class UserAdminModel {
 	private String Section;
 	private String F_Name;
 	private String L_Name;
+	private String Full_Name;
 	private String Emp_ID;
 	private String Usr_Ct_Phone;
 	private String Alt_phone;
@@ -25,6 +26,14 @@ public class UserAdminModel {
 	public UserAdminModel()
 	{
 		
+	}
+
+	public String getFull_Name() {
+		return Full_Name;
+	}
+
+	public void setFull_Name(String full_Name) {
+		Full_Name = full_Name;
 	}
 
 	public UserAdminModel(String usr_Name, String organisation,

@@ -3,12 +3,12 @@
  */
 package com.slicendice.medicare.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.slicendice.medicare.dao.EquipmentAdminDao;
 import com.slicendice.medicare.dao.SupplierAdminDao;
 import com.slicendice.medicare.model.SupplierAdminModel;
 
@@ -29,6 +29,14 @@ public class SupplierAdminService {
 
 	public List<SupplierAdminModel> getSupplierAdminDetailList(String equipId) {
 		return supplierAdminDao.getSupplierAdminDetailList(equipId);
+	}
+
+
+	public int createSupplierAdminRecord(SupplierAdminModel supplierAdminModel) {
+		// TODO Auto-generated method stub
+		supplierAdminModel.setIsActive((short)1);
+		supplierAdminModel.setCreated_Date(new Date());
+		 return supplierAdminDao.createSupplierAdminRecord(supplierAdminModel);
 	}
 	
 }
