@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.slicendice.medicare.model.UserAdminModel;
 import com.slicendice.medicare.model.UserAdminModel;
@@ -38,10 +39,10 @@ public class UserAdminListController {
 	   }
 	
 	@RequestMapping(value="/userAdminDetail", method=RequestMethod.GET)
-	public String redirectEquipAdminDetailPage(@RequestParam("userid") String userid, ModelMap model){
+	public ModelAndView redirectEquipAdminDetailPage(@RequestParam("userid") String userid, ModelMap model){
 		List<UserAdminModel> records = userAdminService.getUserAdminDetailList(userid);
-		model.addAttribute("record", records.get(0));
-		return "/adminDetail/UserAdmin";
+		UserAdminModel userAdminModel = records.get(0);
+		return new ModelAndView("/adminDetail/UserAdmin", "userAdminForm", userAdminModel);
 	}
 	
 	@RequestMapping(value="/createUserAdmin", method=RequestMethod.POST)
@@ -49,4 +50,15 @@ public class UserAdminListController {
 		int success = userAdminService.createUserAdminRecord(userAdminModel);
 		return "/list/UserAdminList";
 	}
+	
+	@RequestMapping(value="/updateUserAdmin", method=RequestMethod.POST)
+	public ModelAndView updateUserAdminDetailPage(@ModelAttribute("userAdminForm") UserAdminModel userAdminModel, ModelMap model){
+		int success = userAdminService.updateUserAdminDetailPage(userAdminModel);
+		List<UserAdminModel> records = userAdminService.getUserAdminDetailList(String.valueOf(userAdminModel.getUserid()));
+		UserAdminModel adminModel = records.get(0);
+		 model.addAttribute("result",success);
+		return new ModelAndView("/adminDetail/UserAdmin", "userAdminForm", adminModel);
+		
+	}
+	
 }

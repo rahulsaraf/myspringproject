@@ -12,7 +12,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
-<%@ include file="../header.html"%>
+<%@ include file="../header.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -21,7 +21,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<title>Medical Equipment</title>
+<title>Service Request Details</title>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -57,7 +57,8 @@
 	<div id="servicereqdetails" role="tabpanel" class="container tab-pane active">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Service Request</h4>
+				<h4 style="display:inline-block;" class="modal-title">Service Details</h4>
+				<a style="display:inline-block; float:right;" href="servicerequestlistpage">Return to Service Details List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this
@@ -72,7 +73,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Service Type :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="servicetype1"
-										disabled="disabled" name = "servicetype">
+										disabled="disabled" value="${record.SERV_TYPE}">
 								</div>
 							</div>
 							
@@ -80,7 +81,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Service Description :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="servicedescr1"
-										disabled="disabled" name = "servicedescription">
+										disabled="disabled" value="${record.SERV_DESC}">
 								</div>
 							</div>
 							
@@ -88,7 +89,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Defect Code :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="defectcode1"
-										disabled="disabled" name = "defectcode">
+										disabled="disabled" name = "${record.DEFECT_CODE}">
 								</div>
 							</div>
 							
@@ -96,7 +97,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Defect Description :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="defectdescr1"
-										disabled="disabled" name = "defectdescription">
+										disabled="disabled" value="${record.DEFECT_DESC}">
 								</div>
 							</div>
 							
@@ -104,7 +105,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Item Code :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="itemcode1"
-										disabled="disabled" name = "itemcode">
+										disabled="disabled" value="${record.ITEM_CODE}" >
 								</div>
 							</div>
 							
@@ -112,9 +113,23 @@
 								<label for="bookId" class="col-lg-3 text-left">Item Description :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="itemdescription1"
-										disabled="disabled" name = "itemdescription">
+										disabled="disabled" value="${record.ITEM_DESC}">
 								</div>
 							</div>
+							
+							<div class="form-group">
+								<label for="bookId" class="col-lg-2 text-left">Serial Number :</label>
+								<div class="col-lg-3">
+									<input type="text" class="form-control" id="serialNo1"
+										disabled="disabled" value="${record.SERIAL_NO}">
+								</div>
+								<label for="branchId" class="col-lg-3 text-left ">Internal Asset Number :</label>
+								<div class="col-lg-3">
+									<input type="text" class="form-control" id="assetno1"
+										disabled="disabled" value="${record.INT_AST_NO}">
+								</div>
+							</div>
+							
 							<div class="modal-footer">
 								<button type="Submit" class="btn btn-primary">Submit</button>
 								<button type="button" class="btn btn-default"

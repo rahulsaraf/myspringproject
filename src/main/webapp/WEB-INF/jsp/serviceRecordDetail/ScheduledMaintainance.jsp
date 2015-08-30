@@ -18,7 +18,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
-<%@ include file="../header.html"%>
+<%@ include file="../header.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -109,15 +109,15 @@
 	<div id="servicereqdetails" role="tabpanel" class="container tab-pane active">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Service Request Details</h4>
+				<h4 style="display:inline-block;" class="modal-title">Scheduled Maintenance Details</h4>
+				<a style="display:inline-block; float:right;" href="scheduledmaintenancelistpage">Return to Scheduled Maintnenace List</a>
 			</div>
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this
 					book</p>
-				<form id="dateRangeForm" class="form-horizontal" name="checkoutbook"
-					action="checkoutbook" method="GET">
-					<fieldset>
-						<legend> </legend>
+				
+					
+					
 						<div id="criteria">
 						
 						
@@ -125,7 +125,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Internal Asset Number :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="asstno1"
-										disabled="disabled" name = "asstno">
+										disabled="disabled" value="${record.INT_Asset_No}">
 								</div>
 							</div>
 							
@@ -133,7 +133,7 @@
 								<label for="bookId" class="col-lg-3 text-left">BME Number :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="bmenumber1"
-										disabled="disabled" name = "bmeno">
+										disabled="disabled" value="${record.BME_NUM}">
 								</div>
 							</div>
 							
@@ -141,15 +141,34 @@
 								<label for="bookId" class="col-lg-3 text-left">Equipment Category :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="category1"
-										disabled="disabled" name = "category">
+										disabled="disabled" value="${record.EQP_CAT}">
 								</div>
 							</div>
+							
+							
+							<!--  <div class="radio">
+								<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" /> 
+									<b>Scheduled Maintenance</b>
+								</label>
+							</div>
+							<br/>
+						
+							<div class="radio">
+								<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" /> 
+									<b>Emergency Maintenance</b>
+								</label>
+							</div>
+							<br/>
+							-->
+							
+							
+							
 							
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Equipment Sub Category :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="subcategory1"
-										disabled="disabled" name = "subcategory">
+										disabled="disabled" value="${record.EQP_SUB_CAT}">
 								</div>
 							</div>
 							
@@ -158,7 +177,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Equipment Code :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="equipcode1"
-										disabled="disabled" name = "equipcode">
+										disabled="disabled" value="${record.EQP_CODE}">
 								</div>
 							</div>
 							
@@ -166,7 +185,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Equipment Description :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="eqipdescription1"
-										disabled="disabled" name = "equipdescription">
+										disabled="disabled" value="${record.EQP_DESC}">
 								</div>
 							</div>
 							
@@ -174,16 +193,13 @@
 								<label for="bookId" class="col-lg-2 text-left">Warranty Type :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="warrantytype1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="warrantytype" name="warrantytype">
+										disabled="disabled" value="${record.WAR_TYPE}">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left">Warranty Expiry Date :</label>
 								<div class="form-group">
         						<div class="col-lg-3">
-           						 <div class="input-group input-append date" id="dateRangePicker">
-                					<input type="text" class="form-control" name="date" />
-                			<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-           						 </div>
+           						 <input type="text" class="form-control" id="date"  disabled="disabled" value="${record.WAR_EXP_DATE}">
+                				</div>
         						</div>
     							</div>
 							</div>
@@ -192,16 +208,26 @@
 								<label for="bookId" class="col-lg-2 text-left">Workshop :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="workshop1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="workshop" name="workshop">
+										disabled="disabled" value="${record.WORKSHOP}">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Asset Type :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="assettype1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="assettype" name="assettype">
+										disabled="disabled" value=>
 								</div>
 							</div>
+							
+							<div class="form-group">
+								<label for="bookId" class="col-lg-2 text-left">Scheduled Maintenance :</label>
+									<div class="col-lg-3">
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" value="${record.SCHD_MAINT}"/>
+									</div>
+								<label for="branchId" class="col-lg-3 text-left ">Emergency Maintenance :</label>
+									<div class="col-lg-3">
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" value="${record.EMGY_MAINT}"/>
+									</div>
+							</div>
+							
 							 <div class="modal-footer">
 								<button type="Submit" class="btn btn-primary">Submit</button>
 								<button type="button" class="btn btn-default"
@@ -210,8 +236,7 @@
 							
 							
 						</div>
-					</fieldset>
-				</form>
+					
 			</div>
 		</div>
 	</div>
@@ -234,8 +259,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Fault Date :</label>
 								<div class="col-lg-8">
 									<input type="text" class="form-control" id="faultdate1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="faultdate" name="faultdate">
+										disabled="disabled" value="${record.FLT_DATE}">
 								</div>
 							</div>
 							
@@ -243,8 +267,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Fault Description :</label>
 								<div class="col-lg-8">
 									<input type="text" class="form-control" id="faultdesc1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="faultdesc" name="faultdesc">
+										disabled="disabled" value="${record.FLT_DESC}">
 								</div>
 							</div>
 							
@@ -253,8 +276,7 @@
 								<label for="branchId" class="col-lg-3 text-left">Fault Priority :</label>
 								<div class="col-lg-8">
 									<input type="text" class="form-control" id="faultpriority1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="faultpriority" name="faultpriority">
+										disabled="disabled" value="${record.FLT_PRIORITY}">
 								</div>
 							</div>
 							
@@ -262,8 +284,7 @@
 								<label for="branchId" class="col-lg-3 text-left">Additional Description :</label>
 								<div class="col-lg-8">
 									<input type="text" class="form-control" id="additionaldesc1"
-										disabled="disabled"> <input type="hidden"
-										class="form-control" id="additionaldesc" name="additionaldesc">
+										disabled="disabled" value="${record.ADD_DESC}">
 								</div>
 							</div>
 							
@@ -271,7 +292,7 @@
 								<label for="bookId" class="col-lg-3 text-left">Remarks :</label>
 								<div class="col-lg-8">
 									<input type="text" class="form-control" id="remarks1"
-										disabled="disabled">
+										disabled="disabled" value="${record.REMARKS}">
 								</div>
 							</div>
 							
@@ -287,10 +308,10 @@
 		</div>
 	</div>
 
-</div>
+
 <footer class="container footer" style="padding-top: 60px;">
       <div class="container">
-        <p class="text-muted">Slice n Dice LLC. Designed by Rahul</p>
+        <p class="text-muted">Slice n Dice LLC. Designed by Manasa Malleshappa</p>
       </div>
 </footer>
 </body>

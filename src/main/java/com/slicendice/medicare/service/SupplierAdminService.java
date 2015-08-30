@@ -34,9 +34,18 @@ public class SupplierAdminService {
 
 	public int createSupplierAdminRecord(SupplierAdminModel supplierAdminModel) {
 		// TODO Auto-generated method stub
+		List<SupplierAdminModel> result = supplierAdminDao.getSupplierAdminList(supplierAdminModel.getSp_Name());
+ 		if(null !=  result && !result.isEmpty()){
+ 			return 2;
+ 		}
 		supplierAdminModel.setIsActive((short)1);
 		supplierAdminModel.setCreated_Date(new Date());
-		 return supplierAdminDao.createSupplierAdminRecord(supplierAdminModel);
+		return supplierAdminDao.createSupplierAdminRecord(supplierAdminModel);
+	}
+
+
+	public int updateSupplierAdminRecord(SupplierAdminModel supplierAdminModel) {
+		 return supplierAdminDao.updateSupplierAdminRecord(supplierAdminModel);
 	}
 	
 }

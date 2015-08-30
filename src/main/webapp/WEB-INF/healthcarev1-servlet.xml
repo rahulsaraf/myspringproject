@@ -20,6 +20,8 @@
 	<mvc:annotation-driven/>
 	<mvc:resources mapping="/static/**" location="/static/img/" />
 	<mvc:default-servlet-handler />
+	
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />

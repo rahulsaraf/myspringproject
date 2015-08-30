@@ -70,4 +70,22 @@ public class SupplierAdminDao {
 				supplierAdminModel.getCreated_Date()
 				);
 	}
+
+	public int updateSupplierAdminRecord(SupplierAdminModel supplierAdminModel) {
+		String SQL = "UPDATE pems_database.supplier_admin SET Sp_Name = ?  ,"
+				+ "Sp_Addr_L1 = ?  ,Sp_Addr_L2 = ?  ,Suburb = ?  ,Sp_City = ?  ,Sp_Zip = ?  ,"
+				+ "Sp_Country = ? ,Sp_Ct_Name = ?  ,Sp_Ct_Phone = ?  ,Alt_phone = ?  ,Email_ID = ? "
+				+ "  WHERE Sp_id = ?  ";
+		 return connector.getJdbcTemplateObject().update(SQL, supplierAdminModel.getSp_Name(),
+					supplierAdminModel.getSp_Addr_L1(),
+					supplierAdminModel.getSp_Addr_L2(),
+					supplierAdminModel.getSuburb(),
+					supplierAdminModel.getSp_City(),
+					supplierAdminModel.getSp_Zip(),
+					supplierAdminModel.getSp_Country(),
+					supplierAdminModel.getSp_Ct_Lname() + ", " + supplierAdminModel.getSp_Ct_Fname(),
+					supplierAdminModel.getSp_Ct_Phone(),
+					supplierAdminModel.getAlt_phone(),
+					supplierAdminModel.getEmail_ID(),supplierAdminModel.getSupplierid());
+	}
 }

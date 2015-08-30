@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
-<%@ include file="../header.html"%>
+<%@ include file="../header.jsp"%>
 <%@ page session="false"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -105,14 +105,6 @@
 							</div>
 							
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">User Full Name :</label>
-								<spring:bind path="full_Name"><div class="col-lg-7">
-									<form:input path="full_Name" type="text" class="form-control"  id="fullname1"
-										disabled="disabled" name = "fullname"/>
-								</div></spring:bind>
-							</div>
-							
-							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Employee ID :</label>
 								<spring:bind path="emp_ID"><div class="col-lg-7">
 									<form:input path="emp_ID" type="text" class="form-control"  value="${record.emp_ID}" id="employeeid1"
@@ -152,6 +144,17 @@
 								<spring:bind path="manager_Id"><div class="col-lg-7">
 									<form:input path="manager_Id" type="text" class="form-control"  value="${record.manager_Id}" id="managerid1"
 										disabled="disabled" name = "managerid"/>
+								</div></spring:bind>
+							</div>
+							<div class="form-group">
+								<label for="bookId" class="col-lg-3 text-left">User Access :</label>
+								<spring:bind path="user_Access"><div class="col-lg-7">
+										<form:select path="user_Access" class="form-control" value="${record.user_Access}" id="user_Access"
+										disabled="disabled" name = "user_Access">
+									        <option>Admin Access</option>
+									        <option>Normal Access</option>
+									        <option>Super Admin</option>
+								      	</form:select>
 								</div></spring:bind>
 							</div>
 							<div class="modal-footer">

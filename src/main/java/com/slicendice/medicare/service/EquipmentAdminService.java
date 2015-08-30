@@ -36,7 +36,18 @@ public class EquipmentAdminService {
 		// TODO Auto-generated method stub
 		equipAdminModel.setIsActive((short)1);
 		equipAdminModel.setCreated_Date(new Date());
+		if(equipmentAdminDao.getEquipAdminDetailList(equipAdminModel.getInt_Asset_no(),equipAdminModel.getSerial_No())){
+			return 2;
+		}else if(equipmentAdminDao.getEquipmentAdminList(equipAdminModel.getEqp_Name()).size() > 0 ){
+			return 3;
+		}
 		return equipmentAdminDao.createEquipmentAdminRecord(equipAdminModel);
+	}
+
+
+	public int updateEquipmentAdminRecord(EquipAdminModel equipAdminModel) {
+
+		return equipmentAdminDao.updateEquipmentAdminRecord(equipAdminModel);
 	}
 	
 }

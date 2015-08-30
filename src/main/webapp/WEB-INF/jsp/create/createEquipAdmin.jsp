@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
-<%@ include file="../header.html"%>
+<%@ include file="../header.jsp"%>
 <%@ page session="false"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -17,10 +17,10 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
 
 <style type="text/css">
 /**
@@ -48,6 +48,28 @@
 <body>
 	<div class="container">
 		<div id="navigationBar"></div>
+		<div class="container" id="errorMessage">
+		<c:choose>
+			<c:when test="${result == 2}">
+			    <div class="alert alert-danger fade in">
+	        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	        	<strong>Error!</strong> please enter different serial no and asset number, Problem occurred while processing your request, Please try again. If problem persists, Contact Support Administrator.
+    			</div>
+    		</c:when>
+    		<c:when test="${result == 3}">
+			    <div class="alert alert-danger fade in">
+	        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	        	<strong>Error!</strong> Please enter unique equipment name, Problem occurred while processing your request, Please try again. If problem persists, Contact Support Administrator.
+    			</div>
+    		</c:when>
+    		<c:when test="${result == 1}">
+    			<div class="alert alert-success fade in">
+	        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	        	<strong>Success!</strong> Record updated successfully.! 
+	        	</div>
+    		</c:when>
+    	</c:choose>
+		</div>
 	</div>
 
 	<div id="equipadmindetails" role="tabpanel" class="container tab-pane active">

@@ -1,5 +1,9 @@
 package com.slicendice.medicare.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -7,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.slicendice.medicare.model.UserAdminModel;
 import com.slicendice.medicare.service.LoginService;
 
 @Controller
@@ -17,22 +22,16 @@ public class LoginController {
 	@RequestMapping(value="/Loginapp", method=RequestMethod.POST)
 	   public String redirectLogin(@RequestParam("username") String username,
 			   @RequestParam("password") String password,
-			   ModelMap model) {
-		//List<Equip_Records> records = medicalEquipmentService.getMedicalEquipmentList(serialNo, assetNo);
+			   ModelMap model,HttpServletRequest request) {
 		
-		boolean valid=loginservice.validateUser(username,password);
-		 /* model.addAttribute("records",records);
-		  model.addAttribute("assetNo",assetNo);
-		  model.addAttribute("serialNo",serialNo);*/
-		if(valid)
-		{
-		model.addAttribute("username",username);
-	      return "welcome";
-		}
-		else
-		{
-			return "unsuccessful";
+		List<UserAdminModel> valid=loginservice.validateUser(username,password);
+		if(null != valid && !valid.isEmpty()){
+			request.getSession().setAttribute("username", username);
+			request.getSession().setAttribute("userAccess", valid.get(0).getUser_Access());
+			return "welcome";
+		}else{
+			model.addAttribute("result",1);
+			return "Login";
 		}
 	   }
-
 }

@@ -3,7 +3,7 @@ package com.slicendice.medicare.model;
 import java.util.Date;
 
 public class UserAdminModel {
-	private String Usr_Name;
+	private int userid;
 	private String Organisation;
 	private String Department;
 	private String Section;
@@ -36,14 +36,14 @@ public class UserAdminModel {
 		Full_Name = full_Name;
 	}
 
-	public UserAdminModel(String usr_Name, String organisation,
+	public UserAdminModel(int usr_Name, String organisation,
 			String department, String section, String f_Name, String l_Name,
 			String emp_ID, String usr_Ct_Phone, String alt_phone,
 			String email_ID, String login_ID, String password,
 			String confirm_Password, String manager_Name, String manager_Id,
 			String user_Access, short isActive, Date created_Date) {
 		super();
-		Usr_Name = usr_Name;
+		userid = usr_Name;
 		Organisation = organisation;
 		Department = department;
 		Section = section;
@@ -63,12 +63,12 @@ public class UserAdminModel {
 		Created_Date = created_Date;
 	}
 
-	public String getUsr_Name() {
-		return Usr_Name;
+	public int getUserid() {
+		return userid;
 	}
 
-	public void setUsr_Name(String usr_Name) {
-		Usr_Name = usr_Name;
+	public void setUserid(int usr_Name) {
+		userid = usr_Name;
 	}
 
 	public String getOrganisation() {
@@ -206,7 +206,8 @@ public class UserAdminModel {
 	public void setCreated_Date(Date created_Date) {
 		Created_Date = created_Date;
 	}
-	
+
+
 	
 
 }

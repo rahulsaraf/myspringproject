@@ -74,4 +74,28 @@ public class VendorAdminDao {
 				vendorAdminModel.getIsActive(),
 				vendorAdminModel.getCreated_Date());
 	}
+
+	public int updateVendorAdminRecord(VendorAdminModel vendorAdminModel) {
+	String SQL = "UPDATE pems_database.vendor_admin SET Vendor_Name = ?  ,Vendor_Desc = ?  ,"
+			+ "Ven_Addr_l1 = ?  ,Ven_Addr_l2 = ?  ,Ven_Addr_l3 = ?  ,Ven_Country = ?  ,Ven_Ct_Name = ?  ,"
+			+ "Ven_Ct_Phone = ?  ,Alt_Phone = ?  ,Email_ID = ?  ,Is_Ven_Supp = ?  ,Is_Ven_Manuf = ? "
+			+ " ,Is_Ven_Preffd = ?  ,DVS_Spares = ?  ,Add_Re = ?  WHERE Vendor_id = ?  ;";
+	 return connector.getJdbcTemplateObject().update(SQL,
+				vendorAdminModel.getVendor_Name(),
+				vendorAdminModel.getVendor_Desc(),
+				vendorAdminModel.getVen_Addr_l1(),
+				vendorAdminModel.getVen_Addr_l2(),
+				vendorAdminModel.getVen_Addr_l3(),
+				vendorAdminModel.getVen_Country(),
+				vendorAdminModel.getVen_Ct_Name(),
+				vendorAdminModel.getVen_Ct_Phone(),
+				vendorAdminModel.getAlt_Phone(),
+				vendorAdminModel.getEmail_ID(),
+				vendorAdminModel.getIs_Ven_Supp(),
+				vendorAdminModel.getIs_Ven_Manuf(),
+				vendorAdminModel.getIs_Ven_Preffd(),
+				vendorAdminModel.getDVS_Spares(),
+				vendorAdminModel.getAdd_Re(),vendorAdminModel.getVendorid()
+				);
+	}
 }

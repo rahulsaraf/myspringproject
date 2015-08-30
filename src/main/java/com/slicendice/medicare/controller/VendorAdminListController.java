@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.slicendice.medicare.model.SupplierAdminModel;
 import com.slicendice.medicare.model.VendorAdminModel;
@@ -38,10 +39,10 @@ public class VendorAdminListController {
 	   }
 	
 	@RequestMapping(value="/vendorAdminDetail", method=RequestMethod.GET)
-	public String redirectEquipAdminDetailPage(@RequestParam("vendorid") String vendorid, ModelMap model){
+	public ModelAndView redirectEquipAdminDetailPage(@RequestParam("vendorid") String vendorid, ModelMap model){
 		List<VendorAdminModel> records = vendorAdminService.getVendorAdminDetailList(vendorid);
-		model.addAttribute("record", records.get(0));
-		return "/adminDetail/VendorAdmin";
+		VendorAdminModel vendorAdminModel = records.get(0);
+		  return new ModelAndView("/adminDetail/VendorAdmin", "vendorAdminForm", vendorAdminModel);
 	}
 	@RequestMapping(value="/createVendorAdmin", method=RequestMethod.POST)
 	public String createVendorAdminDetailPage(@ModelAttribute("vendorAdminForm") VendorAdminModel vendorAdminModel, ModelMap model){
@@ -49,5 +50,13 @@ public class VendorAdminListController {
 		return "/list/VendorAdminList";
 	}
 	
+	@RequestMapping(value="/updateVendorAdmin", method=RequestMethod.POST)
+	public ModelAndView updateVendorAdminDetailPage(@ModelAttribute("vendorAdminForm") VendorAdminModel vendorAdminModel, ModelMap model){
+		int success = vendorAdminService.updateVendorAdminRecord(vendorAdminModel);
+		List<VendorAdminModel> records = vendorAdminService.getVendorAdminDetailList(String.valueOf(vendorAdminModel.getVendorid()));
+		VendorAdminModel adminModel = records.get(0);
+		  model.addAttribute("result",success);
+		  return new ModelAndView("/adminDetail/VendorAdmin", "vendorAdminForm", adminModel);
+	}
 
 }

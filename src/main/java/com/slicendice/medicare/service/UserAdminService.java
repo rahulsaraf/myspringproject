@@ -35,5 +35,10 @@ public class UserAdminService {
 	public int createUserAdminRecord(UserAdminModel userAdminModel) {
 		return userAdminDao.createUserAdminRecord(userAdminModel);
 	}
+
+
+	public int updateUserAdminDetailPage(UserAdminModel userAdminModel) {
+		return userAdminDao.updateUserAdminDetailPage(userAdminModel);
+	}
 	
 }

@@ -36,5 +36,11 @@ public class VendorAdminService {
 		vendorAdminModel.setIsActive((short)1);
 		return vendorAdminDao.createVendorAdminRecord(vendorAdminModel);
 	}
+
+
+	public int updateVendorAdminRecord(VendorAdminModel vendorAdminModel) {
+		// TODO Auto-generated method stub
+		return vendorAdminDao.updateVendorAdminRecord(vendorAdminModel);
+	}
 	
 }

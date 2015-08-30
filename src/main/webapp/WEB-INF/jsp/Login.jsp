@@ -11,7 +11,7 @@
 <style type="text/css">
 
 body { 
- background: url('stethoscope.jpg') no-repeat center center fixed; 
+ background: url('/healthcarev1/static/stethoscope.jpg') no-repeat center center fixed; 
  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
@@ -43,9 +43,11 @@ body {
     <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-7">
+       
             <div class="panel panel-default">
-                <div class="panel-heading"> <strong class="">Login</strong>
-
+     
+                <div class="panel-heading"> <strong class="">Login to PEMS</strong>
+				
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal" name="Loginapp"
@@ -61,7 +63,7 @@ body {
                             <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                             <div class="input-group">
     								<span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                                <input name="password" class="form-control" id="inputPassword3" placeholder="Enter Password" required="">
+                                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Enter Password" required="">
                             </div>
                         </div>
                         <!--  
@@ -85,7 +87,20 @@ body {
                <!-- <div class="panel-footer">Not Registered? <a href="#" class="">Register here</a>
                 </div>
                  --> 
+                 
+                 
+                 
             </div>
+                    <div id="errorMessage">
+						<c:choose>
+							<c:when test="${result == 0}">
+							    <div class="alert alert-danger fade in">
+					        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+					        	<strong>Error!</strong> Invalid Login ID or Password.
+				    			</div>
+				    		</c:when>
+				    	</c:choose>
+					</div>
         </div>
     </div>
 </div>

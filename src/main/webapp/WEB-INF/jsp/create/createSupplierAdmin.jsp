@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
-<%@ include file="../header.html"%>
+<%@ include file="../header.jsp"%>
 <%@ page session="false"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -48,6 +48,16 @@
 <body>
 	<div class="container">
 		<div id="navigationBar"></div>
+		<div class="container" id="errorMessage">
+		<c:choose>
+			<c:when test="${result == 2}">
+			    <div class="alert alert-danger fade in">
+	        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	        	<strong>Error!</strong> please enter different supplier name, Problem occurred while processing your request, Please try again. If problem persists, Contact Support Administrator.
+    			</div>
+    		</c:when>
+    	</c:choose>
+		</div>
 	</div>
 
 	<div id="equipdetails" role="tabpanel" class="container tab-pane active">

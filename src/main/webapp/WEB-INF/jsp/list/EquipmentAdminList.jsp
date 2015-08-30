@@ -5,7 +5,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="../header.html"%>
+<%@ include file="../header.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -32,6 +32,16 @@
 <body class="container">
 	<div class="container">
 		<div id="navigationBar"></div>
+		<div class="container" id="errorMessage">
+		<c:choose>
+    		<c:when test="${result == 1}">
+    			<div class="alert alert-success fade in">
+	        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	        	<strong>Success!</strong> Record updated successfully.! 
+	        	</div>
+    		</c:when>
+    	</c:choose>
+		</div>
 	</div>
 	<div class="container row">
 			<div class="well bs-component">

@@ -3,6 +3,8 @@ package com.slicendice.medicare.model;
 import java.util.Date;
 
 public class Esr_Sr_SrDetailsModel {
+private String SERIAL_NO;
+private String INT_AST_NO;
 private String SERV_TYPE;
 private String SERV_DESC;
 private int COMPREHENSIVE_FLAG;
@@ -34,6 +36,22 @@ public Esr_Sr_SrDetailsModel(String sERV_TYPE, String sERV_DESC,
 	ITEM_DESC = iTEM_DESC;
 	IsActive = isActive;
 	Created_Date = created_Date;
+}
+
+public String getSERIAL_NO() {
+	return SERIAL_NO;
+}
+
+public void setSERIAL_NO(String sERIAL_NO) {
+	SERIAL_NO = sERIAL_NO;
+}
+
+public String getINT_AST_NO() {
+	return INT_AST_NO;
+}
+
+public void setINT_AST_NO(String iNT_AST_NO) {
+	INT_AST_NO = iNT_AST_NO;
 }
 
 public String getSERV_TYPE() {

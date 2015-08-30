@@ -24,27 +24,27 @@ public class UserAdminDao {
 	@Autowired
 	DBConnector connector;
 	
-	public List<UserAdminModel> getUserAdminList(String userName){
-		String SQL;
-		SQL = "SELECT * FROM pems_database.User_admin ";
-		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
-		List<String> params = new ArrayList<String>();
-		if(null != userName && !userName.isEmpty()){
-			SQL = SQL + "WHERE Usr_Name LIKE ? ";
-			params.add("%"+userName+"%");
-		}
-		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
-		return records;
-	}
-
-	public List<UserAdminModel> getUserAdminDetailList(String loginId) {
+	public List<UserAdminModel> getUserAdminList(String loginId){
 		String SQL;
 		SQL = "SELECT * FROM pems_database.User_admin ";
 		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != loginId && !loginId.isEmpty()){
-			SQL = SQL + "WHERE Login_ID = ?";
-			params.add(loginId);
+			SQL = SQL + "WHERE Login_ID LIKE ? ";
+			params.add("%"+loginId+"%");
+		}
+		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
+		return records;
+	}
+
+	public List<UserAdminModel> getUserAdminDetailList(String userid) {
+		String SQL;
+		SQL = "SELECT * FROM pems_database.User_admin ";
+		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
+		List<String> params = new ArrayList<String>();
+		if(null != userid && !userid.isEmpty()){
+			SQL = SQL + "WHERE usr_name = ?";
+			params.add(userid);
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
 		return records;	
@@ -73,5 +73,28 @@ public class UserAdminDao {
 				 userAdminModel.getIsActive(),
 				 userAdminModel.getCreated_Date()
 				 );
+	}
+
+	public int updateUserAdminDetailPage(UserAdminModel userAdminModel) {
+		String SQL = "UPDATE pems_database.user_admin SET Organisation = ?  ,Department = ?  ,Section = ? "
+				+ " ,F_Name = ?  ,L_Name = ?  ,Emp_ID = ?  ,Usr_Ct_Phone = ?  ,Alt_phone = ?  ,Email_ID = ?  "
+				+ ",Login_ID = ?  ,Password = ?  ,Confirm_Password = ?  ,Manager_Name = ?  ,Manager_Id = ? "
+				+ " ,User_Access = ?    WHERE usr_name = ?  ;";
+		 return connector.getJdbcTemplateObject().update(SQL,userAdminModel.getOrganisation(),
+				 userAdminModel.getDepartment(),
+				 userAdminModel.getSection(),
+				 userAdminModel.getF_Name(),
+				 userAdminModel.getL_Name(),
+				 userAdminModel.getEmp_ID(),
+				 userAdminModel.getUsr_Ct_Phone(),
+				 userAdminModel.getAlt_phone(),
+				 userAdminModel.getEmail_ID(),
+				 userAdminModel.getLogin_ID(),
+				 userAdminModel.getPassword(),
+				 userAdminModel.getConfirm_Password(),
+				 userAdminModel.getManager_Name(),
+				 userAdminModel.getManager_Id(),
+				 userAdminModel.getUser_Access(),
+				 userAdminModel.getUserid());
 	}
 }
