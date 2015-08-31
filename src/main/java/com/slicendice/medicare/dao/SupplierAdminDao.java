@@ -62,7 +62,7 @@ public class SupplierAdminDao {
 				supplierAdminModel.getSp_City(),
 				supplierAdminModel.getSp_Zip(),
 				supplierAdminModel.getSp_Country(),
-				supplierAdminModel.getSp_Ct_Lname() + ", " + supplierAdminModel.getSp_Ct_Fname(),
+				 supplierAdminModel.getSp_Ct_Fname(),
 				supplierAdminModel.getSp_Ct_Phone(),
 				supplierAdminModel.getAlt_phone(),
 				supplierAdminModel.getEmail_ID(),

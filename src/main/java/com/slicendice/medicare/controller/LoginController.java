@@ -30,7 +30,7 @@ public class LoginController {
 			request.getSession().setAttribute("userAccess", valid.get(0).getUser_Access());
 			return "welcome";
 		}else{
-			model.addAttribute("result",1);
+			model.addAttribute("result",0);
 			return "Login";
 		}
 	   }

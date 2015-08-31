@@ -8,7 +8,9 @@ private String eqp_Name;
 private String eqp_Desc;
 private Date eqp_Del_Date;
 private String Manf_Name;
+private String vendor_id;
 private String Vendor_Name;
+private String supplier_id;
 private String Supplier_Name;
 private String Model_No;
 private String Serial_No;
@@ -38,6 +40,22 @@ private Date Created_Date;
 public EquipAdminModel()
 {
 	
+}
+
+public String getVendor_id() {
+	return vendor_id;
+}
+
+public void setVendor_id(String vendor_id) {
+	this.vendor_id = vendor_id;
+}
+
+public String getSupplier_id() {
+	return supplier_id;
+}
+
+public void setSupplier_id(String supplier_id) {
+	this.supplier_id = supplier_id;
 }
 
 public EquipAdminModel(String eqp_Name, String eqp_Desc, Date eqp_Del_Date,

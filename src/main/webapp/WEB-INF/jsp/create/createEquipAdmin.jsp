@@ -86,17 +86,17 @@
 						<div id="criteria">
 
 							<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Equipment Name :</label>
+								<label for="bookId" class="col-lg-2 text-left">Equipment Name <span class="text-danger">*</span> :</label>
 								<spring:bind path="eqp_Name"><div class="col-lg-3">
-									<form:input path="eqp_Name" type="text" 
-										class="form-control" value="${record.eqp_Name}"  id="equipname" name="equipname"/>
+									<input type="text" 
+										class="form-control" value="${equipmentAdminForm.eqp_Name}"  id="eqp_Name" name="eqp_Name" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left ">Delivery Date :</label>
+								<label for="branchId" class="col-lg-3 text-left ">Delivery Date <span class="text-danger">*</span> :</label>
 								<spring:bind path="eqp_Del_Date"><div class="col-lg-3">
 								<div class="input-group">
 								 <label for="deliverydate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span></label>
-									<form:input path="eqp_Del_Date" type="text" class="date-picker form-control"
-										 value="${record.eqp_Del_Date}"  id="deliverydate" name="deliverydate"/>
+									<input name="eqp_Del_Date" type="text" class="date-picker form-control"
+										 value="${equipmentAdminForm.eqp_Del_Date}"  id="eqp_Del_Date" name="eqp_Del_Date" required>
 								</div>
 								</div>
 								</spring:bind>
@@ -105,95 +105,105 @@
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Equipment Description :</label>
 								<spring:bind path="eqp_Desc"><div class="col-lg-7">
-									<form:input path="eqp_Desc" type="text" class="form-control" value="${record.eqp_Desc}"  id="equipdescription2"
-										disabled="disabled" name = "equipdescription"/>
+									<input name="eqp_Desc" type="text" class="form-control" value="${equipmentAdminForm.eqp_Desc}"  id="equipdescription2"
+										name = "equipdescription"/>
 								</div>
 								</spring:bind>
 							</div>
 							
 							<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Manufacturer Name :</label>
+								<label for="bookId" class="col-lg-2 text-left">Manufacturer Name <span class="text-danger">*</span> :</label>
 								<spring:bind path="manf_Name"><div class="col-lg-3">
-									<form:input path="manf_Name" type="text" 
-										class="form-control" value="${record.manf_Name}"  id="manufacturer" name="manufacturer"/>
+									<input name="manf_Name" type="text" 
+										class="form-control" value="${equipmentAdminForm.manf_Name}"  id="manf_Name" name="manf_Name" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left">Vendor Name :</label>
+								
+								<label for="branchId" class="col-lg-3 text-left">Vendor Name <span class="text-danger">*</span> :</label>
 								<spring:bind path="vendor_Name"><div class="col-lg-3">
-									<form:input path="vendor_Name" type="text" 
-										class="form-control" value="${record.vendor_Name}"  id="vendorname" name="vendorname"/>
+									<form:select path="vendor_Name" type="text" 
+										class="form-control" value="${equipmentAdminForm.vendor_Name}"  id="vendor_Name" name="vendor_Name">
+										<c:forEach items="${vendorAdminList}" var="vendor" varStatus="recordIndex">
+											<option>${vendor.vendorid} : ${vendor.vendor_Name}</option>
+										</c:forEach>
+									</form:select>
 								</div></spring:bind>
+								
 							</div>
 							<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Model Number :</label>
+								<label for="bookId" class="col-lg-2 text-left">Model Number <span class="text-danger">*</span> :</label>
 								<spring:bind path="model_No"><div class="col-lg-3">
-									<form:input path="model_No" type="text" 
-										class="form-control" value="${record.model_No}"  id="modelnumber" name="modelnumber"/>
+									<input name="model_No" type="text" 
+										class="form-control" value="${equipmentAdminForm.model_No}"  id="model_No" name="model_No" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left">Supplier Name :</label>
+								<label for="branchId" class="col-lg-3 text-left">Supplier Name <span class="text-danger">*</span> :</label>
 								<spring:bind path="supplier_Name"><div class="col-lg-3">
-									<form:input path="supplier_Name" type="text" 
-										class="form-control" value="${record.supplier_Name}"  id="suppliername" name="suppliername"/>
+									<form:select path="supplier_Name" type="text" 
+										class="form-control" value="${equipmentAdminForm.supplier_Name}"  id="supplier_Name" name="supplier_Name">
+										<c:forEach items="${supplierAdminList}" var="supplier" varStatus="recordIndex">
+											<option>${supplier.supplierid} : ${supplier.sp_Name}</option>
+										</c:forEach>
+										</form:select>
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Serial Number :</label>
+								<label for="bookId" class="col-lg-2 text-left">Serial Number <span class="text-danger">*</span> :</label>
 								<spring:bind path="serial_No"><div class="col-lg-3">
-									<form:input path="serial_No" type="text" class="form-control" value="${record.serial_No}"  id="serialNo" name="serialNo"/>
+									<input name="serial_No" type="text" class="form-control" value="${equipmentAdminForm.serial_No}"  id="serial_No" name="serial_No" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left">Internal Asset Number :</label>
+								<label for="branchId" class="col-lg-3 text-left">Internal Asset Number <span class="text-danger">*</span> :</label>
 								<spring:bind path="int_Asset_no"><div class="col-lg-3">
-									<form:input path="int_Asset_no" type="text" class="form-control" value="${record.int_Asset_no}"   id="assetno" name="assetno"/>
+									<input name="int_Asset_no" type="text" class="form-control" value="${equipmentAdminForm.int_Asset_no}"   id="int_Asset_no" name="int_Asset_no" required/>
 								</div></spring:bind>
 							</div>
 								<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Equipment Type :</label>
+								<label for="bookId" class="col-lg-2 text-left">Equipment Type <span class="text-danger">*</span> :</label>
 								<spring:bind path="equip_Type"><div class="col-lg-3">
-									<form:input path="equip_Type" type="text" 
-										class="form-control" value="${record.equip_Type}"  id="equiptype" name="equiptype"/>
+									<input name="equip_Type" type="text" 
+										class="form-control" value="${equipmentAdminForm.equip_Type}"  id="equip_Type" name="equip_Type" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left">Invoice Number :</label>
+								<label for="branchId" class="col-lg-3 text-left">Invoice Number <span class="text-danger">*</span> :</label>
 								<spring:bind path="invoice_No"><div class="col-lg-3">
-									<form:input path="invoice_No" type="text" 
-										class="form-control" value="${record.invoice_No}"  id="invoicenumber" name="invoicenumber"/>
+									<input name="invoice_No" type="text" 
+										class="form-control" value="${equipmentAdminForm.invoice_No}"  id="invoice_No" name="invoice_No" required/>
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Equipment Class :</label>
+								<label for="bookId" class="col-lg-2 text-left">Equipment Class <span class="text-danger">*</span> :</label>
 								<spring:bind path="equip_Class"><div class="col-lg-3">
-									<form:input path="equip_Class" type="text" 
-										class="form-control" value="${record.equip_Class}"  id="equipclass" name="equipclass"/>
+									<input name="equip_Class" type="text" 
+										class="form-control" value="${equipmentAdminForm.equip_Class}"  id="equipclass" name="equipclass" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left">Invoice Date :</label>
+								<label for="branchId" class="col-lg-3 text-left">Invoice Date <span class="text-danger">*</span> :</label>
 								<spring:bind path="invoice_Date"><div class="col-lg-3">
 								<div class="input-group">
 								 <label for="invoicedate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span></label>
-									<form:input path="invoice_Date" class="date-picker form-control" type="text" value="${record.invoice_Date}"   id="invoicedate" name="invoicedate"/>
+									<input name="invoice_Date" class="date-picker form-control" type="text" value="${equipmentAdminForm.invoice_Date}"   id="invoice_Date" name="invoice_Date" required/>
 								</div></div></spring:bind>
 								
 							</div>
 								<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Category :</label>
+								<label for="bookId" class="col-lg-2 text-left">Category <span class="text-danger">*</span> :</label>
 								<spring:bind path="category"><div class="col-lg-3">
-									<form:input path="category" type="text" class="form-control" value="${record.category}"   id="category" name="category"/>
+									<input name="category" type="text" class="form-control" value="${equipmentAdminForm.category}"   id="category" name="category" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left ">Warrenty Type :</label>
+								<label for="branchId" class="col-lg-3 text-left ">Warrenty Type <span class="text-danger">*</span> :</label>
 								<spring:bind path="wrty_Type"><div class="col-lg-3">
-									<form:input path="wrty_Type" type="text" 
-										class="form-control" value="${record.wrty_Type}"  id="warrentytype" name="warrentytype"/>
+									<input name="wrty_Type" type="text" 
+										class="form-control" value="${equipmentAdminForm.wrty_Type}"  id="wrty_Type" name="wrty_Type" required/>
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
-								<label for="bookId" class="col-lg-2 text-left">Sub Category :</label>
+								<label for="bookId" class="col-lg-2 text-left">Sub Category <span class="text-danger">*</span> :</label>
 								<spring:bind path="sub_Ctgry"><div class="col-lg-3">
-									<form:input path="sub_Ctgry" type="text" 
-										class="form-control" value="${record.sub_Ctgry}"  id="subcategory" name="subcategory"/>
+									<input name="sub_Ctgry" type="text" 
+										class="form-control" value="${equipmentAdminForm.sub_Ctgry}"  id="sub_Ctgry" name="sub_Ctgry" required/>
 								</div></spring:bind>
-								<label for="branchId" class="col-lg-3 text-left">Warranty End Date :</label>
+								<label for="branchId" class="col-lg-3 text-left">Warranty End Date <span class="text-danger">*</span> :</label>
 								<spring:bind path="wrty_End_Date"><div class="col-lg-3">
 								<div class="input-group">
 								<label for="warrantyenddate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span></label>
-									<form:input path="wrty_End_Date" type="text" 
-										value="${record.wrty_End_Date}" class="date-picker form-control" id="warrantyenddate" name="warrantyenddate"/>
+									<input name="wrty_End_Date" type="text" 
+										value="${equipmentAdminForm.wrty_End_Date}" class="date-picker form-control" id="wrty_End_Date" name="wrty_End_Date" required/>
 								</div></div></spring:bind>
 							</div>
 							<div class="form-group">

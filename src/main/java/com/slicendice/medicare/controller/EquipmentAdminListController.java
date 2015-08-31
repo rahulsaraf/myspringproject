@@ -18,7 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.slicendice.medicare.model.EquipAdminModel;
+import com.slicendice.medicare.model.SupplierAdminModel;
+import com.slicendice.medicare.model.VendorAdminModel;
 import com.slicendice.medicare.service.EquipmentAdminService;
+import com.slicendice.medicare.service.SupplierAdminService;
+import com.slicendice.medicare.service.VendorAdminService;
 
 /**
  * @author Rahul
@@ -28,6 +32,12 @@ import com.slicendice.medicare.service.EquipmentAdminService;
 public class EquipmentAdminListController {
 	@Autowired
 	EquipmentAdminService equipmentAdminService;
+	
+	@Autowired
+	SupplierAdminService supplierAdminService;
+	
+	@Autowired
+	VendorAdminService vendorAdminService;
 	
 	@RequestMapping(value="/searchequipmentadmin", method=RequestMethod.POST)
 	   public String redirectMedicalEquipListPage(@RequestParam("equipName") String equipName,
@@ -41,7 +51,10 @@ public class EquipmentAdminListController {
 	@RequestMapping(value="/equipmentAdminDetail", method=RequestMethod.GET)
 	public ModelAndView redirectEquipAdminDetailPage(@RequestParam("equipId") String equipId, ModelMap model) throws ParseException{
 		List<EquipAdminModel> records = equipmentAdminService.getEquipAdminDetailList(equipId);
-		
+		 List<SupplierAdminModel> supplierRecords = supplierAdminService.getSupplierAdminList("");
+		  	model.addAttribute("supplierAdminList",supplierRecords);
+		  	List<VendorAdminModel> vendorRecords = vendorAdminService.getVendorAdminList("");
+			  model.addAttribute("vendorAdminList",vendorRecords);
 		EquipAdminModel adminModel = records.get(0);
 		model.addAttribute("record", adminModel);
 		 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -65,14 +78,22 @@ public class EquipmentAdminListController {
 	
 	@RequestMapping(value="/updateEquipmentDetails", method=RequestMethod.POST)
 	public ModelAndView updateEquipAdminDetailPage(@ModelAttribute("equipmentAdminForm") EquipAdminModel equipAdminModel, ModelMap model) throws ParseException{
-		int success = equipmentAdminService.updateEquipmentAdminRecord(equipAdminModel);
 		
+		equipAdminModel.setSupplier_id(equipAdminModel.getSupplier_Name().split(":")[0].trim());
+		equipAdminModel.setVendor_id(equipAdminModel.getVendor_Name().split(":")[0].trim());
+		int success = equipmentAdminService.updateEquipmentAdminRecord(equipAdminModel);
 		List<EquipAdminModel> records = equipmentAdminService.getEquipAdminDetailList(String.valueOf(equipAdminModel.getEqp_id()));
 		EquipAdminModel adminModel = records.get(0);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		adminModel.setWrty_End_Date(format.parse(adminModel.getWrty_End_Date().toString()));
 		adminModel.setEqp_Del_Date(format.parse(adminModel.getEqp_Del_Date().toString()));
 		adminModel.setInvoice_Date(format.parse(adminModel.getInvoice_Date().toString()));
+		
+		 List<SupplierAdminModel> supplierRecords = supplierAdminService.getSupplierAdminList("");
+		  	model.addAttribute("supplierAdminList",supplierRecords);
+		  	List<VendorAdminModel> vendorRecords = vendorAdminService.getVendorAdminList("");
+			  model.addAttribute("vendorAdminList",vendorRecords);
+		
 		
 		model.addAttribute("record", adminModel);
 		model.addAttribute("result", success);

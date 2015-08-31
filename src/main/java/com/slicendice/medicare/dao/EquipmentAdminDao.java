@@ -98,7 +98,7 @@ public class EquipmentAdminDao {
 				+ ",equip_class = ?  ,invoice_date = ?  ,category = ?  ,wrty_type = ?  ,sub_ctgry = ? "
 				+ " ,wrty_end_date = ?  ,st_comp = ?  ,doc_rvcd = ?  ,equip_manuals = ?  "
 				+ ",service_manuals = ?  ,ote_needed = ?  ,calib_certi = ?  ,accessories = ?  "
-				+ ",trng_done = ? ,dept_trnd = ?  ,spares_List = ?  ,add_re = ?  "
+				+ ",trng_done = ? ,dept_trnd = ?  ,spares_List = ?  ,add_re = ?,vendor_id = ?,supplier_id = ?  "
 				+ "  WHERE eqp_id = ? ";
 		return connector.getJdbcTemplateObject().update(SQL, equipAdminModel.getInt_Asset_no(),
 				equipAdminModel.getSerial_No(),
@@ -127,7 +127,7 @@ public class EquipmentAdminDao {
 				equipAdminModel.getTrng_Done(),
 				equipAdminModel.getDept_Trnd(),
 				equipAdminModel.getSpares_List(),
-				equipAdminModel.getAdd_Re(),equipAdminModel.getEqp_id());
+				equipAdminModel.getAdd_Re(),equipAdminModel.getVendor_id(),equipAdminModel.getSupplier_id(),equipAdminModel.getEqp_id());
 		
 	
 	}

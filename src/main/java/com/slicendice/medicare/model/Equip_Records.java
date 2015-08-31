@@ -39,6 +39,33 @@ private String SP_INV_LIST;
 private String SP_MFC_EQP;
 private short IsActive;
 private Date Created_Date;
+private String vendorid;
+private String supplierid;
+private int equip_record_id;
+
+public int getEquip_record_id() {
+	return equip_record_id;
+}
+
+public void setEquip_record_id(int equip_record_id) {
+	this.equip_record_id = equip_record_id;
+}
+
+public String getVendorid() {
+	return vendorid;
+}
+
+public void setVendorid(String vendorid) {
+	this.vendorid = vendorid;
+}
+
+public String getSupplierid() {
+	return supplierid;
+}
+
+public void setSupplierid(String supplierid) {
+	this.supplierid = supplierid;
+}
 
 public Equip_Records()
 {

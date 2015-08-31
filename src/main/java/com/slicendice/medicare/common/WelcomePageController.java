@@ -19,7 +19,7 @@ public class WelcomePageController {
 	
    @RequestMapping(value="/login", method=RequestMethod.GET)
    public String redirectWelcomePage(ModelMap model, HttpServletRequest request) {
-	   model.addAttribute("result", 0);
+	   model.addAttribute("result", 1);
 	   request.getSession().invalidate();
 	   request.getSession().removeValue("username");
       return "Login";

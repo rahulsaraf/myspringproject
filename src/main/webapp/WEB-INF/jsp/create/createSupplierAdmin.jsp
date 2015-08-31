@@ -74,88 +74,89 @@
 						<div id="criteria">
 						
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Supplier Name :</label>
+								<label for="bookId" class="col-lg-3 text-left">Supplier Name <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_Name"><div class="col-lg-7">
-									<form:input path="sp_Name" type="text" class="form-control" id="suppname"
-										disabled="disabled" name = "suppname" value="${record.sp_Name}"/>
+									<input name="sp_Name" type="text" class="form-control" id="suppname"
+										 name = "suppname" value="${supplierAdminForm.sp_Name}" required/>
 								</div></spring:bind>
 							</div>
 							
 								<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Supplier Address Line 1 :</label>
+								<label for="bookId" class="col-lg-3 text-left">Supplier Address Line 1 <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_Addr_L1"><div class="col-lg-7">
-									<form:input path="sp_Addr_L1" type="text" class="form-control" id="suppaddressline1"
-										disabled="disabled" name = "suppaddressline1" value="${record.sp_Addr_L1}"/>
+									<input name="sp_Addr_L1" type="text" class="form-control" id="suppaddressline1"
+										 name = "suppaddressline1" value="${supplierAdminForm.sp_Addr_L1}" required/>
 								</div></spring:bind>
 							</div>
 							
 								<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Supplier Address Line 2 :</label>
 								<spring:bind path="sp_Addr_L2"><div class="col-lg-7">
-									<form:input path="sp_Addr_L2" type="text" class="form-control" id="suppaddressline2"
-										disabled="disabled" name = "suppaddressline2" value="${record.sp_Addr_L2}"/>
+									<input name="sp_Addr_L2" type="text" class="form-control" id="suppaddressline2"
+										 name = "suppaddressline2" value="${supplierAdminForm.sp_Addr_L2}"/>
 								</div></spring:bind>
 							</div>
 							
 								<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Suburb :</label>
 								<spring:bind path="suburb"><div class="col-lg-7">
-									<form:input path="suburb" type="text" class="form-control" id="suburb"
-										disabled="disabled" name = "suburb" value="${record.suburb}"/>
+									<input name="suburb" type="text" class="form-control" id="suburb"
+										 name = "suburb" value="${supplierAdminForm.suburb}"/>
 								</div></spring:bind>
 							</div>
 							
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">City :</label>
+								<label for="bookId" class="col-lg-3 text-left">City <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_City"><div class="col-lg-7">
-									<form:input path="sp_City" type="text" class="form-control" id="city"
-										disabled="disabled" name = "city" value="${record.sp_City}"/>
+									<input name="sp_City" type="text" class="form-control" id="city"
+										 name = "city" value="${supplierAdminForm.sp_City}" required/>
 								</div></spring:bind>
 							</div>
 							
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Pin/Zip :</label>
+								<label for="bookId" class="col-lg-3 text-left">Pin/Zip <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_Zip"><div class="col-lg-7">
-									<form:input path="sp_Zip" type="text" class="form-control" id="pinzip"
-										disabled="disabled" name = "pinzip" value="${record.sp_Zip}"/>
+									<input name="sp_Zip" type="text" class="form-control" id="pinzip"
+										 name = "pinzip" value="${supplierAdminForm.sp_Zip}" required/>
 								</div></spring:bind>
 							</div>
 								<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Supplier Country :</label>
+								<label for="bookId" class="col-lg-3 text-left">Supplier Country <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_Country"><div class="col-lg-7">
-									<form:input path="sp_Country" type="text" class="form-control" id="suppliercountry"
-										disabled="disabled" name = "suppliercountry" value="${record.sp_Country}"/>
+									<input name="sp_Country" type="text" class="form-control" id="suppliercountry"
+										 name = "suppliercountry" value="${supplierAdminForm.sp_Country}" required/>
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Supplier Contact Name :</label>
+								<label for="bookId" class="col-lg-3 text-left">Supplier Contact Name <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_Ct_Fname"><div class="col-lg-7">
-									<form:input path="sp_Ct_Fname" type="text" class="form-control" id="suppcontactname"
-										disabled="disabled" name = "suppcontactname" value="${record.sp_Ct_Fname}"/>
+									<input name="sp_Ct_Fname" type="text" class="form-control" id="suppcontactname"
+										 name = "suppcontactname" value="${supplierAdminForm.sp_Ct_Fname}" required/>
 								</div></spring:bind>
 							</div>
 							
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Supplier Contact Phone :</label>
+								<label for="bookId" class="col-lg-3 text-left">Supplier Contact Phone <span class="text-danger">*</span> :</label>
 								<spring:bind path="sp_Ct_Phone"><div class="col-lg-7">
-									<form:input path="sp_Ct_Phone" type="text" class="form-control" id="suppcontactphone"
-										disabled="disabled" name = "suppcontactphone" value="${record.sp_Ct_Phone}"/>
+									<input name="sp_Ct_Phone" type="text" class="form-control" id="suppcontactphone"
+										 name = "suppcontactphone" value="${supplierAdminForm.sp_Ct_Phone}" required/>
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Alternate Phone :</label>
 								<spring:bind path="alt_phone"><div class="col-lg-7">
-									<form:input path="alt_phone" type="text" class="form-control" id="alternatephone"
-										disabled="disabled" name = "alternatephone" value="${record.alt_phone}"/>
+									<input name="alt_phone" type="text" class="form-control" id="alternatephone"
+										 name = "alternatephone" value="${supplierAdminForm.alt_phone}" />
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
-								<label for="bookId" class="col-lg-3 text-left">Email Address :</label>
+								<label for="bookId" class="col-lg-3 text-left">Email Address <span class="text-danger">*</span> :</label>
 								<spring:bind path="email_ID"><div class="col-lg-7">
-									<form:input path="email_ID" type="text" class="form-control" id="emailaddress"
-										disabled="disabled" name = "emailaddress" value="${record.email_ID}"/>
+									<input name="email_ID" type="text" class="form-control" id="emailaddress"
+										 name = "emailaddress" value="${supplierAdminForm.email_ID}" required/>
 								</div></spring:bind>
 							</div>
+
 
 							<div class="modal-footer">
 								<button type="Submit" class="btn btn-primary">Submit</button>

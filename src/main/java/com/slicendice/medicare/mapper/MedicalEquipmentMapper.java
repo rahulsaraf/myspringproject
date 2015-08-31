@@ -67,6 +67,9 @@ public class MedicalEquipmentMapper implements RowMapper<Equip_Records>{
 		records.setSP_MFC_EQP(rs.getString("SP_MFC_EQP"));
 		records.setIsActive(rs.getShort("IsActive"));
 		records.setCreated_Date(rs.getDate("Created_Date"));
+		records.setSupplierid(rs.getString("supplier_id"));
+		records.setVendorid(rs.getString("vendor_id"));
+		records.setEquip_record_id(rs.getInt("equip_record_id"));
 		return records;
 	}
 }

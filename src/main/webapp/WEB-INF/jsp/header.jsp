@@ -20,7 +20,7 @@ background: url(/healthcarev1/static/images.jpg) center center fixed;
 }
 
 #navigation{
-background-color:transparent;
+font-color:white;
 }
 
 </style>
@@ -44,7 +44,7 @@ $('#login').click( function(){
 </script>
 
 <div id="header-wrapper" class="container" >
-	<h1 class="container">Physical Equipment Management System</h1>
+	<h1 class="container"><font color="white">Physical Equipment Management System</font></h1>
 </div>
 <div class="navbar" id="navigation">
 <nav class="container navbar navbar-inverse navbar-transparent">
