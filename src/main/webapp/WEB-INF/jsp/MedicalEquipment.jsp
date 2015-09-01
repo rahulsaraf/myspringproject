@@ -49,6 +49,7 @@
 	$('#myTabs a[href="#locationdetails"]').tab('show');
 	$('#myTabs a[href="#supplierdetails"]').tab('show');
 	$('#myTabs a[href="#sparedetails"]').tab('show');
+	$('#myTabs a[href="#additionaldetails"]').tab('show');
 	
 	
 </script>
@@ -63,6 +64,7 @@
 		    <li role="presentation"><a href="#locationdetails" role="tab" id="location-tab" data-toggle="tab" aria-controls="locationdetails">Location</a></li>
 		    <li role="presentation"><a href="#supplierdetails" role="tab" id="supplier-tab" data-toggle="tab" aria-controls="supplierdetails">Supplier</a></li>
 		    <li role="presentation"><a href="#sparedetails" role="tab" id="spare-tab" data-toggle="tab" aria-controls="sparedetails">Spares</a></li>
+		    <li role="presentation"><a href="#additionaldetails" role="tab" id="additional-tab" data-toggle="tab" aria-controls="additionaldetails">Additional Details</a></li>
 		</ul>
 	</div>
 	
@@ -494,6 +496,61 @@
 				</form:form>
 			</div>
 		</div>
+	</div>
+	
+	<div id="additionaldetails" role="tabpanel" class="container tab-pane">
+	<div class="modal-content">
+			<div class="modal-header">
+				<h4 style="display:inline-block;" class="modal-title">Additional Details</h4>
+				<a style="display:inline-block; float:right;" href="medicalequiplistpage">Return to Medical Equipment List</a>
+			</div>
+			<div class="modal-body">
+				<p>Please enter following information in order to check-out this
+					book</p>
+					
+					<form:form class="form-horizontal">
+					<fieldset>
+					<div class="form-group"><div class="col-lg-8">
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='WarrantyDetails'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Warranty Details
+		</button>
+		</div></div><div class="form-group"><div class="col-lg-8">
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='AnnualContractDetails'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Annual Contract Details
+		</button></div></div><div class="form-group"><div class="col-lg-8">
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='ScheduledMaintainance'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Scheduled Maintenance
+		</button></div></div><div class="form-group"><div class="col-lg-8">
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='ServiceRequest'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Service Request Details
+		</button></div></div><div class="form-group"><div class="col-lg-8">
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='TechnicalDetails'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Technician Details
+		</button></div></div><div class="form-group"><div class="col-lg-8">					
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='createEquipAdminPage'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Work Order
+		</button></div></div><div class="form-group"><div class="col-lg-8">
+		<button type="button" class="btn btn-primary "
+							onclick="window.location.href='createEquipAdminPage'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Navigate to Gate Pass Issue
+		</button></div></div>
+		</fieldset>
+		</form:form>
+		</div></div>
+				
 	</div>
 </div>
 <footer class="container footer" style="padding-top: 60px;">
