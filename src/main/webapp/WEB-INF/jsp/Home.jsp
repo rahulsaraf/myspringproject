@@ -18,8 +18,29 @@
 		<div id="navigationBar">
 		</div>
 </div>
-<div id = "header" class="container">
-<div id="banner" class="container text-danger"><span></span></div>
+<div class="well container">
+<a href="#" class="close" data-dismiss="alert">&times;</a>
+<h4 class="modal-title">Welcome : </h4>
+<hr>
+<div class="alert " role="alert">
+<a href="#" class="close" data-dismiss="alert">&times;</a>
+Welcome to PEMS, a Quick way to manage Equipments.</div>
+</div>
+<div class="well well-lg container">
+<a href="#" class="close" data-dismiss="alert">&times;</a>
+<h4 class="modal-title">Alerts : </h4>
+<hr>
+<div class="alert alert-success" role="alert">
+<a href="#" class="close" data-dismiss="alert">&times;</a>
+New Equipment '' Has been added to the system by </div>
+
+<div class="alert alert-danger" role="alert">
+<a href="#" class="close" data-dismiss="alert">&times;</a>
+Large Well</div>
+
+<div class="alert " role="alert">
+<a href="#" class="close" data-dismiss="alert">&times;</a>
+Large Well</div>
 </div>
 </body>
 </html>

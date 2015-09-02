@@ -58,5 +58,16 @@ public class MedicalEquipmentListController {
 		return new ModelAndView("MedicalEquipment", "medEquipmentForm", record);
 	}
 	
+	@RequestMapping(value="/deleteEquipMentRecord", method=RequestMethod.GET)
+	public String deleteEquipMentRecord(@RequestParam("equipId") String equipId, ModelMap model){
+		
+
+		int success = medicalEquipmentService.deleteEquipMentRecord(equipId);
+		List<Equip_Records> records = medicalEquipmentService.getMedicalEquipmentList("", "");
+		  model.addAttribute("records",records);
+		return "/list/MedicalEquipmentList";
+	}
+	
+	
 	
 }

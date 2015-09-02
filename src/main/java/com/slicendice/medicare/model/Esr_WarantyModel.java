@@ -3,6 +3,9 @@ package com.slicendice.medicare.model;
 import java.util.Date;
 
 public class Esr_WarantyModel {
+
+private int warrenty_id;
+private int equip_id;
 private String INT_ASS_NUM;
 private int S_NUM;
 private String EQP_NAME;
@@ -18,6 +21,22 @@ private Date DELY_DATE;
 private Date INSTA_DATE;
 private short IsActive;
 private Date Created_Date;
+
+public int getWarrenty_id() {
+	return warrenty_id;
+}
+
+public void setWarrenty_id(int warrenty_id) {
+	this.warrenty_id = warrenty_id;
+}
+
+public int getEquip_id() {
+	return equip_id;
+}
+
+public void setEquip_id(int equip_id) {
+	this.equip_id = equip_id;
+}
 
 public Esr_WarantyModel()
 {

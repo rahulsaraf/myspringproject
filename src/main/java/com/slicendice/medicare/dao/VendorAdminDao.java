@@ -30,8 +30,12 @@ public class VendorAdminDao {
 		List<VendorAdminModel> records = new ArrayList<VendorAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != vendorName && !vendorName.isEmpty()){
-			SQL = SQL + "WHERE Vendor_Name LIKE ? ";
+			SQL = SQL + "WHERE Vendor_Name LIKE ? and isactive = ?";
 			params.add("%"+vendorName+"%");
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new VendorAdminMapper());
 		return records;
@@ -43,8 +47,12 @@ public class VendorAdminDao {
 		List<VendorAdminModel> records = new ArrayList<VendorAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != vendorId && !vendorId.isEmpty()){
-			SQL = SQL + "WHERE Vendor_id = ?";
+			SQL = SQL + "WHERE Vendor_id = ? and isactive = ?";
 			params.add(vendorId);
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new VendorAdminMapper());
 		return records;	
@@ -97,5 +105,10 @@ public class VendorAdminDao {
 				vendorAdminModel.getDVS_Spares(),
 				vendorAdminModel.getAdd_Re(),vendorAdminModel.getVendorid()
 				);
+	}
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		String SQL = "UPDATE pems_database.vendor_admin SET IsActive = ?  where Vendor_id = ?";
+		return connector.getJdbcTemplateObject().update(SQL,0,equipId);
 	}
 }

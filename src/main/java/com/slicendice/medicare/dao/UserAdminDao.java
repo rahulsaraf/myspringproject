@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.slicendice.medicare.common.DBConnector;
 import com.slicendice.medicare.mapper.UserAdminMapper;
 import com.slicendice.medicare.model.UserAdminModel;
@@ -30,8 +31,12 @@ public class UserAdminDao {
 		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != loginId && !loginId.isEmpty()){
-			SQL = SQL + "WHERE Login_ID LIKE ? ";
+			SQL = SQL + "WHERE Login_ID LIKE ? and isactive = ?";
 			params.add("%"+loginId+"%");
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
 		return records;
@@ -43,8 +48,12 @@ public class UserAdminDao {
 		List<UserAdminModel> records = new ArrayList<UserAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != userid && !userid.isEmpty()){
-			SQL = SQL + "WHERE usr_name = ?";
+			SQL = SQL + "WHERE usr_name = ? and isactive = ?";
 			params.add(userid);
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new UserAdminMapper());
 		return records;	
@@ -96,5 +105,10 @@ public class UserAdminDao {
 				 userAdminModel.getManager_Id(),
 				 userAdminModel.getUser_Access(),
 				 userAdminModel.getUserid());
+	}
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		String SQL = "UPDATE pems_database.user_admin SET IsActive = ?  where usr_name = ?";
+		return connector.getJdbcTemplateObject().update(SQL,0,equipId);
 	}
 }

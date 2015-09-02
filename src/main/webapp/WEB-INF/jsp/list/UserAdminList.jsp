@@ -25,7 +25,12 @@
 		$("#useridinput").val(serialNo);
 		document.userAdminDetail.submit(); 
 		return false;
-	}
+	};
+	
+	function deleteRecord(equipId){
+		alert("Click Continue to delete this Equipment");
+		window.location.href="deleteUserAdminRecord?userId="+equipId;
+	};
 	
 </script>
 </head>
@@ -105,6 +110,12 @@
 										value="${record.password}" /></td>
 								<td><c:out value="${record.confirm_Password}" /></td>
 								<td><c:out value="${record.user_Access}" /></td>
+								<td><button id="deleteButton" type="button"
+												class="btn btn-danger btn-xs" 
+												onclick="deleteRecord(${record.userid})">
+												<span class="glyphicon glyphicon-remove"
+													aria-hidden="true"></span>
+											</button></td>
 							</tr>
 						</c:forEach>
 					</tbody>

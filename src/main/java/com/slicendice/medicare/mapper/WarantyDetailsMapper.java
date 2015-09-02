@@ -16,8 +16,10 @@ public Esr_WarantyModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 	// TODO Auto-generated method stub
 	
 	Esr_WarantyModel records=new Esr_WarantyModel();
-	records.setINT_ASS_NUM(rs.getString("INT_ASS_NUM"));
-	records.setS_NUM(rs.getInt("S_NUM"));
+	records.setWarrenty_id(rs.getInt("Wrty_id"));
+	records.setEquip_id(rs.getInt("equip_id"));
+	records.setINT_ASS_NUM(rs.getString("Int_Asset_no"));
+	records.setS_NUM(rs.getInt("Serial_No"));
 	records.setEQP_NAME(rs.getString("EQP_NAME"));
 	records.setEQP_DESC(rs.getString("EQP_DESC"));
 	records.setMNF_NAME(rs.getString("MNF_NAME"));

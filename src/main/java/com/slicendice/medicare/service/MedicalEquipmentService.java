@@ -44,5 +44,10 @@ public class MedicalEquipmentService {
 		
 		return result;
 	}
+
+	public int deleteEquipMentRecord(String equipId) {
+		
+		return medicalEquipmentDao.deleteEquipMentRecord(equipId);
+	}
 	
 }

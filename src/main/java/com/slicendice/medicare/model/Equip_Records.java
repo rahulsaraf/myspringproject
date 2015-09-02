@@ -30,7 +30,8 @@ private String ACTUAL_LOC;
 private String SUPPLIER_NAME;
 private String SUP_ADD_L1;
 private String SUP_ADD_L2;
-private String Sp_Ct_Fname;
+private String SUP_ADD_L3;
+private String Sp_Ct_Name;
 private String Sp_Ct_Lname;
 private int SUP_CT_PHONE;
 private int ALT_PHONE;
@@ -110,7 +111,7 @@ public Equip_Records(String cATEGORY, String sUB_CTGRY, String sERIAL_NO,
 	SUPPLIER_NAME = sUPPLIER_NAME;
 	SUP_ADD_L1 = sUP_ADD_L1;
 	SUP_ADD_L2 = sUP_ADD_L2;
-	Sp_Ct_Fname = sp_Ct_Fname;
+	Sp_Ct_Name = sp_Ct_Fname;
 	Sp_Ct_Lname = sp_Ct_Lname;
 	SUP_CT_PHONE = sUP_CT_PHONE;
 	ALT_PHONE = aLT_PHONE;
@@ -329,12 +330,13 @@ public void setSUP_ADD_L2(String sUP_ADD_L2) {
 	SUP_ADD_L2 = sUP_ADD_L2;
 }
 
-public String getSp_Ct_Fname() {
-	return Sp_Ct_Fname;
+
+public String getSp_Ct_Name() {
+	return Sp_Ct_Name;
 }
 
-public void setSp_Ct_Fname(String sp_Ct_Fname) {
-	Sp_Ct_Fname = sp_Ct_Fname;
+public void setSp_Ct_Name(String sp_Ct_Name) {
+	Sp_Ct_Name = sp_Ct_Name;
 }
 
 public String getSp_Ct_Lname() {
@@ -400,6 +402,15 @@ public Date getCreated_Date() {
 public void setCreated_Date(Date created_Date) {
 	Created_Date = created_Date;
 }
+
+public String getSUP_ADD_L3() {
+	return SUP_ADD_L3;
+}
+
+public void setSUP_ADD_L3(String sUP_ADD_L3) {
+	SUP_ADD_L3 = sUP_ADD_L3;
+}
+
 
 
 

@@ -31,8 +31,12 @@ public class SupplierAdminDao {
 		List<SupplierAdminModel> records = new ArrayList<SupplierAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != supplierName && !supplierName.isEmpty()){
-			SQL = SQL + "WHERE Sp_Name LIKE ? ";
+			SQL = SQL + "WHERE Sp_Name LIKE ? and isactive = ?";
 			params.add("%"+supplierName+"%");
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new SupplierAdminMapper());
 		return records;
@@ -44,8 +48,12 @@ public class SupplierAdminDao {
 		List<SupplierAdminModel> records = new ArrayList<SupplierAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != supplierId && !supplierId.isEmpty()){
-			SQL = SQL + "WHERE Sp_id = ?";
+			SQL = SQL + "WHERE Sp_id = ? and isactive = ?";
 			params.add(supplierId);
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new SupplierAdminMapper());
 		return records;	}
@@ -83,9 +91,14 @@ public class SupplierAdminDao {
 					supplierAdminModel.getSp_City(),
 					supplierAdminModel.getSp_Zip(),
 					supplierAdminModel.getSp_Country(),
-					supplierAdminModel.getSp_Ct_Lname() + ", " + supplierAdminModel.getSp_Ct_Fname(),
+					supplierAdminModel.getSp_Ct_Fname(),
 					supplierAdminModel.getSp_Ct_Phone(),
 					supplierAdminModel.getAlt_phone(),
 					supplierAdminModel.getEmail_ID(),supplierAdminModel.getSupplierid());
+	}
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		String SQL = "UPDATE pems_database.supplier_admin SET IsActive = ?  where Sp_id = ?";
+		return connector.getJdbcTemplateObject().update(SQL,0,equipId);
 	}
 }

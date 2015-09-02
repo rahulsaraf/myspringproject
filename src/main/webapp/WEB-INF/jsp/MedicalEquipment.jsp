@@ -89,7 +89,8 @@
 							<form:hidden path="SUPPLIER_NAME"    value="${medEquipmentForm.SUPPLIER_NAME}"/>
 							<form:hidden path="SUP_ADD_L1"    value="${medEquipmentForm.SUP_ADD_L1}"/>
 							<form:hidden path="SUP_ADD_L2"    value="${medEquipmentForm.SUP_ADD_L2}"/>
-							<form:hidden path="sp_Ct_Fname"    value="${medEquipmentForm.sp_Ct_Fname}"/>
+							<form:hidden path="SUP_ADD_L3"    value="${medEquipmentForm.SUP_ADD_L3}"/>
+							<form:hidden path="sp_Ct_Name"    value="${medEquipmentForm.sp_Ct_Name}"/>
 							<form:hidden path="sp_Ct_Lname"    value="${medEquipmentForm.sp_Ct_Lname}"/>
 							<form:hidden path="SUP_CT_PHONE"    value="${medEquipmentForm.SUP_CT_PHONE}"/>
 							<form:hidden path="ALT_PHONE"    value="${medEquipmentForm.ALT_PHONE}"/>
@@ -252,7 +253,8 @@
 					<fieldset>
 						<legend> </legend>
 						<div id="criteria">
-<form:hidden path="SUB_CTGRY"    value="${medEquipmentForm.SUB_CTGRY}"/>
+						<form:hidden path="CATEGORY"    value="${medEquipmentForm.CATEGORY}"/>
+						<form:hidden path="SUB_CTGRY"    value="${medEquipmentForm.SUB_CTGRY}"/>
 							<form:hidden path="SERIAL_NO"    value="${medEquipmentForm.SERIAL_NO}"/>
 							<form:hidden path="MANUF_NAME"    value="${medEquipmentForm.MANUF_NAME}"/>
 							<form:hidden path="EQP_NAME"    value="${medEquipmentForm.EQP_NAME}"/>
@@ -274,7 +276,8 @@
 							<form:hidden path="SUPPLIER_NAME"    value="${medEquipmentForm.SUPPLIER_NAME}"/>
 							<form:hidden path="SUP_ADD_L1"    value="${medEquipmentForm.SUP_ADD_L1}"/>
 							<form:hidden path="SUP_ADD_L2"    value="${medEquipmentForm.SUP_ADD_L2}"/>
-							<form:hidden path="sp_Ct_Fname"    value="${medEquipmentForm.sp_Ct_Fname}"/>
+							<form:hidden path="SUP_ADD_L3"    value="${medEquipmentForm.SUP_ADD_L3}"/>
+							<form:hidden path="sp_Ct_Name"    value="${medEquipmentForm.sp_Ct_Name}"/>
 							<form:hidden path="sp_Ct_Lname"    value="${medEquipmentForm.sp_Ct_Lname}"/>
 							<form:hidden path="SUP_CT_PHONE"    value="${medEquipmentForm.SUP_CT_PHONE}"/>
 							<form:hidden path="ALT_PHONE"    value="${medEquipmentForm.ALT_PHONE}"/>
@@ -352,17 +355,17 @@
 							</div>
 							<div class="form-group">
 								<label for="title" class="col-lg-3 text-left">Supplier Address Line 3 :</label>
-								<spring:bind path="SUP_ADD_L2"><div class="col-lg-8">
-									<input name="SUP_ADD_L2" type="text" class="form-control" id="supplieradd3" name="supplieradd3"
-										 value="${medEquipmentForm.SUP_ADD_L2}">
+								<spring:bind path="SUP_ADD_L3"><div class="col-lg-8">
+									<input name="SUP_ADD_L3" type="text" class="form-control" id="supplieradd3" name="supplieradd3"
+										 value="${medEquipmentForm.SUP_ADD_L3}">
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
 								<label for="dueDate" class="col-lg-3 text-left">Supplier Contact Name <span class="text-danger">* </span>:
 								</label>
-								<spring:bind path="SUP_ADD_L2"><div class="col-lg-8">
-									<input name="SUP_ADD_L2" type="text" class="form-control" id="suppliercontactname" name="suppliercontactname"
-										name="SUP_ADD_L2" required value="${medEquipmentForm.SUP_ADD_L2}">
+								<spring:bind path="sp_Ct_Name"><div class="col-lg-8">
+									<input name="sp_Ct_Name" type="text" class="form-control" id="suppliercontactname" name="suppliercontactname"
+										name="sp_Ct_Name" required value="${medEquipmentForm.sp_Ct_Name}">
 								</div></spring:bind>
 							</div>
 							<div class="form-group">
@@ -480,7 +483,8 @@
 							<form:hidden path="SUPPLIER_NAME"    value="${medEquipmentForm.SUPPLIER_NAME}"/>
 							<form:hidden path="SUP_ADD_L1"    value="${medEquipmentForm.SUP_ADD_L1}"/>
 							<form:hidden path="SUP_ADD_L2"    value="${medEquipmentForm.SUP_ADD_L2}"/>
-							<form:hidden path="sp_Ct_Fname"    value="${medEquipmentForm.sp_Ct_Fname}"/>
+							<form:hidden path="SUP_ADD_L3"    value="${medEquipmentForm.SUP_ADD_L3}"/>
+							<form:hidden path="sp_Ct_Name"    value="${medEquipmentForm.sp_Ct_Name}"/>
 							<form:hidden path="sp_Ct_Lname"    value="${medEquipmentForm.sp_Ct_Lname}"/>
 							<form:hidden path="SUP_CT_PHONE"    value="${medEquipmentForm.SUP_CT_PHONE}"/>
 							<form:hidden path="ALT_PHONE"    value="${medEquipmentForm.ALT_PHONE}"/>
@@ -509,10 +513,14 @@
 					book</p>
 					
 					<form:form class="form-horizontal">
+					<legend> </legend>
+					
 					<fieldset>
+						<div id="criteria">
+						
 					<div class="form-group"><div class="col-lg-8">
 		<button type="button" class="btn btn-primary "
-							onclick="window.location.href='WarrantyDetails'">
+							onclick="window.location.href='searchwarrantydetails?assetNo=&serialNo=${medEquipmentForm.SERIAL_NO}'">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 								Navigate to Warranty Details
 		</button>
@@ -546,7 +554,7 @@
 							onclick="window.location.href='createEquipAdminPage'">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 								Navigate to Gate Pass Issue
-		</button></div></div>
+		</button></div></div></div>
 		</fieldset>
 		</form:form>
 		</div></div>

@@ -30,8 +30,12 @@ public class EquipmentAdminDao {
 		List<EquipAdminModel> records = new ArrayList<EquipAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != equipName && !equipName.isEmpty()){
-			SQL = SQL + "WHERE EQP_NAME LIKE ? ";
+			SQL = SQL + "WHERE EQP_NAME LIKE ? and isactive = ?";
 			params.add("%"+equipName+"%");
+			params.add("1");
+		}else{
+			SQL = SQL + "WHERE isactive = ?";
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new EquipmentAdminMapper());
 		return records;
@@ -43,8 +47,9 @@ public class EquipmentAdminDao {
 		List<EquipAdminModel> records = new ArrayList<EquipAdminModel>();
 		List<String> params = new ArrayList<String>();
 		if(null != equipId && !equipId.isEmpty()){
-			SQL = SQL + "WHERE eqp_id = ?";
+			SQL = SQL + "WHERE eqp_id = ? and isactive = ?";
 			params.add(equipId);
+			params.add("1");
 		}
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new EquipmentAdminMapper());
 		return records;	}
@@ -132,18 +137,27 @@ public class EquipmentAdminDao {
 	
 	}
 
-	public boolean getEquipAdminDetailList(String int_Asset_no, String serial_no) {
+	public List<EquipAdminModel> getEquipAdminDetailList(String int_Asset_no, String serial_no) {
 		String SQL;
 		SQL = "SELECT * FROM pems_database.equip_admin ";
 		List<EquipAdminModel> records = new ArrayList<EquipAdminModel>();
 		List<String> params = new ArrayList<String>();
-			SQL = SQL + "WHERE Int_Asset_no = ? and Serial_No = ? ";
-			params.add(int_Asset_no);
+		
+		if(null != serial_no && !serial_no.isEmpty()){
+			SQL = SQL + " WHERE serial_no = ?";
 			params.add(serial_no);
+		}else if(null != int_Asset_no && !int_Asset_no.isEmpty()){
+			SQL = SQL + " WHERE int_asset_no = ?";
+			params.add(int_Asset_no);
+		}
+		
 		records = connector.getJdbcTemplateObject().query(SQL,params.toArray(), new EquipmentAdminMapper());
-		if(records.size() > 0)
-			return true;
-		else
-			return false;
+		return records;
+	}
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		String SQL;
+		SQL = "UPDATE pems_database.equip_admin SET isactive = ? WHERE eqp_id = ? ";
+		return connector.getJdbcTemplateObject().update(SQL,0 ,equipId);
 	}
 }

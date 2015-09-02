@@ -37,10 +37,16 @@
 			<div class="well bs-component">
 			<div>
 				<form class="form-horizontal" name="searchwarrantydetails" action="searchwarrantydetails"
-					method="POST">
+					method="GET">
 					<fieldset>
 						<legend>
 							<span> Warranty Details List Page</span>
+							<button type="button" class="btn btn-primary pull-right"
+							onclick="window.location.href='createWarrantyDetails?assetNo=${assetNo}&serialNo=${serialNo}'">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Enter New Warranty
+							</button>
+							
 							<button type="button" class="btn btn-default pull-right"
 								data-toggle="collapse" data-target="#criteria">
 								<span class="glyphicon glyphicon-menu-hamburger"
@@ -82,8 +88,8 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Internal Asset Number</th>
 							<th>Serial Number</th>
+							<th>Internal Asset Number</th>
 							<th>Equipment Name</th>
 							<th>Equipment Description</th>
 							<th>Manufacturer Name</th>
@@ -101,8 +107,8 @@
 						<c:forEach items="${records}" var="record" varStatus="recordIndex">
 							<tr>
 								<td id="book_id${recordIndex.index}">
-								<a href="warrantyDetail?serialNo=${record.S_NUM}" onclick="submitForm(${record.S_NUM})" style="display:block;"><c:out
-										value="${record.S_NUM}" /></a>
+								<a href="warrantyDetail?serialNo=${record.s_NUM}" onclick="submitForm(${record.s_NUM})" style="display:block;"><c:out
+										value="${record.s_NUM}" /></a>
 								</td>
 								<td id="title${booksIndex.index}"><c:out
 										value="${record.INT_ASS_NUM}" /></td>

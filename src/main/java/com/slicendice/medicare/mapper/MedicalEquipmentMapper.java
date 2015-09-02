@@ -58,7 +58,8 @@ public class MedicalEquipmentMapper implements RowMapper<Equip_Records>{
 		records.setSUPPLIER_NAME(rs.getString("SUPPLIER_NAME"));
 		records.setSUP_ADD_L1(rs.getString("SUP_ADD_L1"));
 		records.setSUP_ADD_L2(rs.getString("SUP_ADD_L2"));
-		records.setSp_Ct_Fname(rs.getString("Sp_Ct_Fname"));
+		records.setSUP_ADD_L3(rs.getString("SUP_ADD_L3"));
+		records.setSp_Ct_Name(rs.getString("Sp_Ct_Name"));
 		records.setSp_Ct_Lname(rs.getString("Sp_Ct_Lname"));
 		records.setSUP_CT_PHONE(rs.getInt("SUP_CT_PHONE"));
 		records.setALT_PHONE(rs.getInt("ALT_PHONE"));

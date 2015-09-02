@@ -25,7 +25,11 @@
 		$("#supplieridinput").val(serialNo);
 		document.supplierAdminDetail.submit(); 
 		return false;
-	}
+	};
+	function deleteRecord(equipId){
+		alert("Click Continue to delete this Equipment");
+		window.location.href="deleteSupplierAdminRecord?supplierId="+equipId;
+	};
 	
 </script>
 </head>
@@ -121,6 +125,12 @@
 								<td><c:out value="${record.sp_Ct_Fname}" /></td>
 								<td><c:out value="${record.sp_Ct_Lname}" /></td>
 								<td><c:out value="${record.sp_Ct_Phone}" /></td>
+								<td><button id="deleteButton" type="button"
+												class="btn btn-danger btn-xs" 
+												onclick="deleteRecord(${record.supplierid})">
+												<span class="glyphicon glyphicon-remove"
+													aria-hidden="true"></span>
+											</button></td>
 							</tr>
 						</c:forEach>
 					</tbody>

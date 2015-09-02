@@ -52,6 +52,8 @@ public class SupplierAdminListController {
 		if(success != 1){
 			return "/create/createSupplierAdmin";
 		}
+		List<SupplierAdminModel> records = supplierAdminService.getSupplierAdminList("");
+		  model.addAttribute("records",records);
 		return "/list/SupplierAdminList";
 	}
 	
@@ -63,5 +65,14 @@ public class SupplierAdminListController {
 		model.addAttribute("result", success);
 		return new ModelAndView("/adminDetail/SupplierAdmin", "supplierAdminForm", adminModel);
 	}
+	
+	@RequestMapping(value="/deleteSupplierAdminRecord",method=RequestMethod.GET)
+	 public String deleteSupplierAdminRecord(@RequestParam("supplierId") String equipId,
+			   ModelMap model) {
+		  int success = supplierAdminService.deleteEquipMentAdminRecord(equipId);
+			List<SupplierAdminModel> records = supplierAdminService.getSupplierAdminList("");
+			  model.addAttribute("records",records);
+	      return "/list/SupplierAdminList";
+	   }
 
 }

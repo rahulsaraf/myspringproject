@@ -9,7 +9,7 @@
 	background-color:transparent;
 }
 body {
-background: url(/healthcarev1/static/images.jpg) center center fixed; 
+background: url(/healthcarev1/static/Home_page.jpg) center center fixed; 
  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;

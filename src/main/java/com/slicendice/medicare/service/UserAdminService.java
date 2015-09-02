@@ -3,6 +3,7 @@
  */
 package com.slicendice.medicare.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,12 +34,20 @@ public class UserAdminService {
 
 
 	public int createUserAdminRecord(UserAdminModel userAdminModel) {
+		userAdminModel.setIsActive((short)1);
+		userAdminModel.setCreated_Date(new Date());
 		return userAdminDao.createUserAdminRecord(userAdminModel);
 	}
 
 
 	public int updateUserAdminDetailPage(UserAdminModel userAdminModel) {
 		return userAdminDao.updateUserAdminDetailPage(userAdminModel);
+	}
+
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		// TODO Auto-generated method stub
+		return userAdminDao.deleteEquipMentAdminRecord(equipId);
 	}
 	
 }

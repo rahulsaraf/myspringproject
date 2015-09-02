@@ -47,6 +47,8 @@ public class VendorAdminListController {
 	@RequestMapping(value="/createVendorAdmin", method=RequestMethod.POST)
 	public String createVendorAdminDetailPage(@ModelAttribute("vendorAdminForm") VendorAdminModel vendorAdminModel, ModelMap model){
 		int success = vendorAdminService.createVendorAdminRecord(vendorAdminModel);
+		List<VendorAdminModel> records = vendorAdminService.getVendorAdminList("");
+		  model.addAttribute("records",records);
 		return "/list/VendorAdminList";
 	}
 	
@@ -58,5 +60,14 @@ public class VendorAdminListController {
 		  model.addAttribute("result",success);
 		  return new ModelAndView("/adminDetail/VendorAdmin", "vendorAdminForm", adminModel);
 	}
+	
+	@RequestMapping(value="/deleteVendorAdminRecord",method=RequestMethod.GET)
+	 public String deleteSupplierAdminRecord(@RequestParam("vendorId") String equipId,
+			   ModelMap model) {
+		  int success = vendorAdminService.deleteEquipMentAdminRecord(equipId);
+			List<VendorAdminModel> records = vendorAdminService.getVendorAdminList("");
+			  model.addAttribute("records",records);
+		  return "/list/VendorAdminList";
+	   }
 
 }

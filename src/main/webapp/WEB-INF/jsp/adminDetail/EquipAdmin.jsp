@@ -139,7 +139,7 @@ $(document).ready(function() {
 								<label for="bookId" class="col-lg-3 text-left">Equipment Description :</label>
 								<spring:bind path="eqp_Desc"><div class="col-lg-7">
 									<input name="eqp_Desc" type="text" class="form-control" value="${equipmentAdminForm.eqp_Desc}"  id="equipdescription2"
-										disabled="disabled" name = "equipdescription"/>
+										 name = "equipdescription"/>
 								</div>
 								</spring:bind>
 							</div>

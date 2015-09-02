@@ -48,6 +48,8 @@ public class UserAdminListController {
 	@RequestMapping(value="/createUserAdmin", method=RequestMethod.POST)
 	public String createUserAdminDetailPage(@ModelAttribute("userAdminForm") UserAdminModel userAdminModel, ModelMap model){
 		int success = userAdminService.createUserAdminRecord(userAdminModel);
+		List<UserAdminModel> records = userAdminService.getUserAdminList("");
+		  model.addAttribute("records",records);
 		return "/list/UserAdminList";
 	}
 	
@@ -60,5 +62,15 @@ public class UserAdminListController {
 		return new ModelAndView("/adminDetail/UserAdmin", "userAdminForm", adminModel);
 		
 	}
+	
+	@RequestMapping(value="/deleteUserAdminRecord",method=RequestMethod.GET)
+	 public String deleteSupplierAdminRecord(@RequestParam("userId") String equipId,
+			   ModelMap model) {
+		int success = userAdminService.deleteEquipMentAdminRecord(equipId);
+		List<UserAdminModel> records = userAdminService.getUserAdminList("");
+		  model.addAttribute("records",records);
+		return "/list/UserAdminList";
+	   }
+
 	
 }

@@ -62,8 +62,7 @@
 			<div class="modal-body">
 				<p>Please enter following information in order to check-out this
 					book</p>
-				<form class="form-horizontal" name="checkoutbook"
-					action="checkoutbook" method="GET">
+				<form class="form-horizontal" name="checkoutbook"action="checkoutbook" method="GET">
 					<fieldset>
 						<legend> </legend>
 						<div id="criteria">
@@ -72,26 +71,26 @@
 								<label for="bookId" class="col-lg-2 text-left">Internal Asset Number :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="assetno3"
-										disabled="disabled" value="${record.INT_ASS_NUM}">
+										value="${record.INT_ASS_NUM}">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Serial Number :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="serialNo3"
-										disabled="disabled" value="${record.S_NUM}">
+										value="${record.s_NUM}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-3 text-left">Equipment Name :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="equipname1"
-										disabled="disabled" value="${record.EQP_NAME}">
+										value="${record.EQP_NAME}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Equipment Description :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="equipdescription"
-										disabled="disabled" value="${record.EQP_DESC}">
+										value="${record.EQP_DESC}">
 								</div>
 							</div>
 							
@@ -99,57 +98,57 @@
 								<label for="bookId" class="col-lg-2 text-left">Manufacturer Name :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="manufname1"
-										disabled="disabled" value="${record.MNF_NAME}">
+										value="${record.MNF_NAME}">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Vendor Name :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="vendorname1"
-										disabled="disabled" value="${record.VENDOR_NAME}">
+										value="${record.VENDOR_NAME}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Warranty Start Date :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="warrstartdate1"
-										disabled="disabled" value="${record.WAR_S_DATE}" >
+										value="${record.WAR_S_DATE}" >
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Warranty End Date :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="warrenddate1"
-										disabled="disabled" value="${record.WAR_E_DATE}">
+										value="${record.WAR_E_DATE}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Warranty Type :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="warrantytype1"
-										disabled="disabled" value="${record.WAR_TYPE}">
+										value="${record.WAR_TYPE}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Invoice Number :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="invoicenumber1"
-										disabled="disabled" value="${record.INV_NUM}" >
+										value="${record.INV_NUM}" >
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="branchId" class="col-lg-3 text-left">Invoice Date :</label>
 								<div class="col-lg-7">
 									<input type="text" class="form-control" id="invoicedate1"
-										disabled="disabled" value="${record.INV_DATE}">
+										value="${record.INV_DATE}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="bookId" class="col-lg-2 text-left">Delivery Date :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="deliverydate1"
-										disabled="disabled" value="${record.DELY_DATE}">
+										value="${record.DELY_DATE}">
 								</div>
 								<label for="branchId" class="col-lg-3 text-left ">Installation Date :</label>
 								<div class="col-lg-3">
 									<input type="text" class="form-control" id="installdate1"
-										disabled="disabled" value="${record.INSTA_DATE}"> 
+										value="${record.INSTA_DATE}"> 
 								</div>
 							</div>
 							<div class="modal-footer">

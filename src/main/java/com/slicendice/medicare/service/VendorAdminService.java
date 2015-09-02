@@ -42,5 +42,11 @@ public class VendorAdminService {
 		// TODO Auto-generated method stub
 		return vendorAdminDao.updateVendorAdminRecord(vendorAdminModel);
 	}
+
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		// TODO Auto-generated method stub
+		return vendorAdminDao.deleteEquipMentAdminRecord(equipId);
+	}
 	
 }

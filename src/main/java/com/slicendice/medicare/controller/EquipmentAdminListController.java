@@ -58,8 +58,11 @@ public class EquipmentAdminListController {
 		EquipAdminModel adminModel = records.get(0);
 		model.addAttribute("record", adminModel);
 		 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		 if(null != adminModel.getWrty_End_Date())
 		 adminModel.setWrty_End_Date(format.parse(adminModel.getWrty_End_Date().toString()));
+		 if(null != adminModel.getEqp_Del_Date())
 		 adminModel.setEqp_Del_Date(format.parse(adminModel.getEqp_Del_Date().toString()));
+		 if(null != adminModel.getInvoice_Date())
 		 adminModel.setInvoice_Date(format.parse(adminModel.getInvoice_Date().toString()));
 		return new ModelAndView("/adminDetail/EquipAdmin", "equipmentAdminForm", adminModel);
 	}
@@ -70,6 +73,8 @@ public class EquipmentAdminListController {
 		model.addAttribute("equipAdminModel", equipAdminModel);
 		model.addAttribute("result", success);
 		if(success == 1){
+			List<EquipAdminModel> records = equipmentAdminService.getEquipmentAdminList("");
+			  model.addAttribute("records",records);
 			return "/list/EquipmentAdminList";			
 		}else{
 			return "/create/createEquipAdmin";
@@ -100,5 +105,15 @@ public class EquipmentAdminListController {
 		
 		return new ModelAndView("/adminDetail/EquipAdmin", "equipmentAdminForm", adminModel);
 	}
+	
+	@RequestMapping(value="/deleteEquipMentAdminRecord",method=RequestMethod.GET)
+	 public String deleteEquipMentAdminRecord(@RequestParam("equipId") String equipId,
+			   ModelMap model) {
+		  int success = equipmentAdminService.deleteEquipMentAdminRecord(equipId);
+			List<EquipAdminModel> records = equipmentAdminService.getEquipmentAdminList("");
+			  model.addAttribute("records",records);
+	      return "/list/EquipmentAdminList";
+	   }
+	
 	
 }

@@ -31,10 +31,10 @@ public class VendorAdminMapper implements RowMapper<VendorAdminModel>{
 		records.setVen_Ct_Phone(rs.getString("Ven_Ct_Phone"));
 		records.setAlt_Phone(rs.getString("Alt_Phone"));
 		records.setEmail_ID(rs.getString("Email_ID"));
-		records.setIs_Ven_Supp(rs.getShort("Is_Ven_Supp"));
-		records.setIs_Ven_Manuf(rs.getShort("Is_Ven_Manuf"));
-		records.setIs_Ven_Preffd(rs.getShort("Is_Ven_Preffd"));
-		records.setDVS_Spares(rs.getShort("DVS_Spares"));
+		records.setIs_Ven_Supp(rs.getString("Is_Ven_Supp"));
+		records.setIs_Ven_Manuf(rs.getString("Is_Ven_Manuf"));
+		records.setIs_Ven_Preffd(rs.getString("Is_Ven_Preffd"));
+		records.setDVS_Spares(rs.getString("DVS_Spares"));
 		records.setAdd_Re(rs.getString("Add_Re"));
 		records.setIsActive(rs.getShort("IsActive"));
 		records.setCreated_Date(rs.getDate("Created_Date"));

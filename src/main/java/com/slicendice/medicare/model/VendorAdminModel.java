@@ -15,10 +15,10 @@ private String Ven_Ct_Name;
 private String Ven_Ct_Phone;
 private String Alt_Phone;
 private String Email_ID;
-private short Is_Ven_Supp;
-private short Is_Ven_Manuf;
-private short Is_Ven_Preffd;
-private short DVS_Spares;
+private String Is_Ven_Supp;
+private String Is_Ven_Manuf;
+private String Is_Ven_Preffd;
+private String DVS_Spares;
 private String Add_Re;
 private short IsActive;
 private Date Created_Date;
@@ -39,8 +39,8 @@ public VendorAdminModel()
 public VendorAdminModel(String vendor_Name, String vendor_Desc,
 		String ven_Addr_l1, String ven_Addr_l2, String ven_Addr_l3,
 		String ven_Country, String ven_Ct_Name, String ven_Ct_Phone,
-		String alt_Phone, String email_ID, short is_Ven_Supp,
-		short is_Ven_Manuf, short is_Ven_Preffd, short dVS_Spares,
+		String alt_Phone, String email_ID, String is_Ven_Supp,
+		String is_Ven_Manuf, String is_Ven_Preffd, String dVS_Spares,
 		String add_Re, short isActive, Date created_Date) {
 	super();
 	Vendor_Name = vendor_Name;
@@ -142,35 +142,37 @@ public void setEmail_ID(String email_ID) {
 	Email_ID = email_ID;
 }
 
-public short getIs_Ven_Supp() {
+
+
+public String getIs_Ven_Supp() {
 	return Is_Ven_Supp;
 }
 
-public void setIs_Ven_Supp(short is_Ven_Supp) {
+public void setIs_Ven_Supp(String is_Ven_Supp) {
 	Is_Ven_Supp = is_Ven_Supp;
 }
 
-public short getIs_Ven_Manuf() {
+public String getIs_Ven_Manuf() {
 	return Is_Ven_Manuf;
 }
 
-public void setIs_Ven_Manuf(short is_Ven_Manuf) {
+public void setIs_Ven_Manuf(String is_Ven_Manuf) {
 	Is_Ven_Manuf = is_Ven_Manuf;
 }
 
-public short getIs_Ven_Preffd() {
+public String getIs_Ven_Preffd() {
 	return Is_Ven_Preffd;
 }
 
-public void setIs_Ven_Preffd(short is_Ven_Preffd) {
+public void setIs_Ven_Preffd(String is_Ven_Preffd) {
 	Is_Ven_Preffd = is_Ven_Preffd;
 }
 
-public short getDVS_Spares() {
+public String getDVS_Spares() {
 	return DVS_Spares;
 }
 
-public void setDVS_Spares(short dVS_Spares) {
+public void setDVS_Spares(String dVS_Spares) {
 	DVS_Spares = dVS_Spares;
 }
 

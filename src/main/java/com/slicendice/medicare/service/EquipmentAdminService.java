@@ -36,7 +36,8 @@ public class EquipmentAdminService {
 		// TODO Auto-generated method stub
 		equipAdminModel.setIsActive((short)1);
 		equipAdminModel.setCreated_Date(new Date());
-		if(equipmentAdminDao.getEquipAdminDetailList(equipAdminModel.getInt_Asset_no(),equipAdminModel.getSerial_No())){
+		List<EquipAdminModel> records =equipmentAdminDao.getEquipAdminDetailList(equipAdminModel.getInt_Asset_no(),equipAdminModel.getSerial_No());
+		if(null != records && !records.isEmpty()){
 			return 2;
 		}else if(equipmentAdminDao.getEquipmentAdminList(equipAdminModel.getEqp_Name()).size() > 0 ){
 			return 3;
@@ -48,6 +49,21 @@ public class EquipmentAdminService {
 	public int updateEquipmentAdminRecord(EquipAdminModel equipAdminModel) {
 
 		return equipmentAdminDao.updateEquipmentAdminRecord(equipAdminModel);
+	}
+
+
+	public EquipAdminModel getEquipmentDetails(String serialNo, String assetNo) {
+		List<EquipAdminModel> records =equipmentAdminDao.getEquipAdminDetailList(assetNo,serialNo);
+		if(null != records && !records.isEmpty()){
+			return records.get(0);
+		}
+		return null;
+	}
+
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		// TODO Auto-generated method stub
+		return equipmentAdminDao.deleteEquipMentAdminRecord(equipId);
 	}
 	
 }

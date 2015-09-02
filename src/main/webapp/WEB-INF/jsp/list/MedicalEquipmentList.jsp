@@ -20,12 +20,19 @@
 	$(document).ready(function() {
 		$('#navigationBar').load('header.html');
 	});
-	
+	function deleteRecord(equipId){
+		alert("Click Continue to delete this Equipment");
+		window.location.href="deleteEquipMentRecord?equipId="+equipId;
+	};
 	function submitForm(serialNo){
 		$("#serialinputid").val(serialNo);
 		document.equipmentDetail.submit(); 
 		return false;
-	}
+	};
+	
+	
+	
+	
 	
 </script>
 </head>
@@ -93,7 +100,7 @@
 							<th>Indent Number</th>
 							<th>Invoice Number</th>
 							<th>Invoice Date</th>
-							<th>LPO Number</th>
+							<!-- <th>LPO Number</th> -->
 							<th>Manufacturer Name</th>
 						</tr>
 					</thead>
@@ -117,8 +124,14 @@
 								<td><c:out value="${record.INDENT_NO}" /></td>
 								<td><c:out value="${record.INVOICE_NO}" /></td>
 								<td><c:out value="${record.INVOICE_DATE}" /></td>
-								<td><c:out value="${record.LPO_NO}" /></td>
+								<%-- <td><c:out value="${record.LPO_NO}" /></td> --%>
 								<td><c:out value="${record.MANUF_NAME}" /></td>
+								<td><button id="deleteButton" type="button"
+												class="btn btn-danger btn-xs" 
+												onclick="deleteRecord(${record.equip_record_id})">
+												<span class="glyphicon glyphicon-remove"
+													aria-hidden="true"></span>
+											</button></td>
 							</tr>
 						</c:forEach>
 					</tbody>

@@ -47,5 +47,11 @@ public class SupplierAdminService {
 	public int updateSupplierAdminRecord(SupplierAdminModel supplierAdminModel) {
 		 return supplierAdminDao.updateSupplierAdminRecord(supplierAdminModel);
 	}
+
+
+	public int deleteEquipMentAdminRecord(String equipId) {
+		// TODO Auto-generated method stub
+		 return supplierAdminDao.deleteEquipMentAdminRecord(equipId);
+	}
 	
 }

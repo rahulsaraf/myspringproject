@@ -25,7 +25,11 @@
 		$("#equipidinput").val(serialNo);
 		document.equipmentAdminDetail.submit(); 
 		return false;
-	}
+	};
+	function deleteRecord(equipId){
+		alert("Click Continue to delete this Equipment");
+		window.location.href="deleteEquipMentAdminRecord?equipId="+equipId;
+	};
 	
 </script>
 </head>
@@ -100,8 +104,8 @@
 							<th>Model Number</th>
 							<th>Serial Number</th>
 							<th>Internal Asset Number</th>
-							<th>Equipment Type</th>
-							<th>Equipment Class</th>	
+						<!-- 	<th>Equipment Type</th>
+							<th>Equipment Class</th>	 -->
 							<th>Invoice Date</th>
 							<th>Warranty End Date</th>
 						</tr>
@@ -124,10 +128,16 @@
 								<td><c:out value="${record.model_No}" /></td>
 								<td><c:out value="${record.serial_No}" /></td>
 								<td><c:out value="${record.int_Asset_no}" /></td>
-								<td><c:out value="${record.equip_Type}" /></td>
-								<td><c:out value="${record.equip_Class}" /></td>
+							<%-- 	<td><c:out value="${record.equip_Type}" /></td>
+								<td><c:out value="${record.equip_Class}" /></td> --%>
 								<td><c:out value="${record.invoice_Date}" /></td>
 								<td><c:out value="${record.wrty_End_Date}" /></td>
+									<td><button id="deleteButton" type="button"
+												class="btn btn-danger btn-xs" 
+												onclick="deleteRecord(${record.eqp_id})">
+												<span class="glyphicon glyphicon-remove"
+													aria-hidden="true"></span>
+											</button></td>
 							</tr>
 						</c:forEach>
 					</tbody>
